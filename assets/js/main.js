@@ -101,6 +101,8 @@
     					parallaxMultiplier: 25
   					});
 
+  					// Second version of particles: http://codepen.io/nodws/pen/vKoKoG
+
 					$('#two').poptrox({
 						caption: function($a) { return $a.next('h3').text(); },
 						overlayColor: '#2c2c2c',
