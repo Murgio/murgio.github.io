@@ -5,7 +5,7 @@
 
 
 body {
- 	color: #111;
+ 	color: #54514d;
  }
 h1, .entry-title {
 	font-family: 'Playfair Display', serif;
@@ -37,7 +37,7 @@ h1,
 
 	
 /* Card Image Mask Color */
-.cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #4c4c37; }
+.cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #717154; }
 
 
 /* PRIMARY COLOR */
@@ -47,7 +47,7 @@ a.more-link:hover,
 .portfolio-nav a:hover,
 .skill-unit .bar .progress,
 #nprogress .bar {
- 	background-color: #c2b2e9;
+ 	background-color: #bcb1a6;
 	}
 .bypostauthor > article,
 .event h3,
@@ -56,14 +56,14 @@ textarea:focus,
 input:focus, 
 select:focus,
 .tabs .tab-titles li a.active {
-	border-color: #c2b2e9
+	border-color: #bcb1a6
 	}
 .event h3,
 .entry-title a:hover {
-	color: #c2b2e9
+	color: #bcb1a6
 	}
 #nprogress .spinner-icon {
-  	border-top-color: #c2b2e9; border-left-color: #c2b2e9;
+  	border-top-color: #bcb1a6; border-left-color: #bcb1a6;
 	}
 
 
@@ -73,22 +73,22 @@ input[type=submit],
 input[type=button], 
 button, 
 .button {
-	color: #9b7fdd; border-color: #9b7fdd;
+	color: #bcb1a6; border-color: #bcb1a6;
 	}
 input[type=submit]:hover, 
 input[type=button]:hover,
 button:not(.button):hover,
 .button:after {
-	background: #9b7fdd;
+	background: #bcb1a6;
 	}
 
 
 /* Secondary Button Color */
 .button.secondary {
-	color: #9b7fdd; border-color: #9b7fdd;
+	color: #bcb1a6; border-color: #bcb1a6;
 	}
 .button.secondary:after {
-	background: #9b7fdd;
+	background: #bcb1a6;
 	}
 
 /* Section Title Underline Color */
@@ -98,4 +98,4 @@ button:not(.button):hover,
 .card-nav li.current_page_item a { color: #ffebc5; }
 
 /* Card Title Background Color */
-.card-info h2 { background: #9b7fdd; }
+.card-info h2 { background: #bcb1a6; }
