@@ -1,9 +1,9 @@
 <?php
 
 	// site owner
-	$site_name = 'Muriz Serifovic HTML5 Template';
-	$sender_domain = 'server@your-domain.com';
-	$to = 'jonhdoeeee@jonhdoe.com';
+	$site_name = 'Muriz Serifovic';
+	$sender_domain = 'https://formspree.io/murgio.studio@gmail.com';
+	$to = 'murgio.studio@gmail.com';
 	
 	// contact form fields
 	$name = trim( $_POST['name'] );
