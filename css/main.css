@@ -2660,8 +2660,32 @@ body {
 	}
 /* Links */
 a {
- 	color: #4ECE99;
+ 	color: #000000;
 	}
+a.deepchef {
+	color: #E37B66;
+}
+a.lemon {
+	color: #c4be1d;
+}
+a.sirlexa {
+	color: #205c9a;
+}
+
+.underline--thin {
+	border-bottom: 1px solid currentColor;
+  }
+
+a.deepchef:hover {
+	color: #d56227;
+}
+a.lemon:hover {
+	color: #ae8319;
+}
+a.sirlexa:hover {
+	color: #13365b;
+}
+
 a:hover {
  	color: #399670;
 	}

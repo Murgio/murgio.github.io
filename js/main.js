@@ -23,7 +23,8 @@
 		
 		
 		// ------------------------------
-		// SOUND EFFECTS 
+		// SOUND EFFECTS
+		/*
 		soundEffects = $('html').hasClass('sound-effects');
 		
 		if (soundEffects) {
@@ -35,7 +36,7 @@
 			
 			tick = document.createElement('audio');
 			tick.setAttribute('src', $('html').data('audio-tick'));
-		}
+		} */
 		// ------------------------------			
 					
 		
@@ -87,9 +88,10 @@
 				$('.close-card').removeClass('is-visible');
 				
 				// Wind Reverse Sound Effect
+				/*
 				if (soundEffects) {
 					windReverse.play();
-				}
+				}*/
 				
 				closePage();
 				return false;
@@ -762,9 +764,10 @@
 				$('html').addClass('p-animating');
 				
 				// Play Sound Effect
+				/*
 				if (soundEffects) {
 					tick.play();
-				}
+				}*/
 				
 				p.removeClass('animate-in animate-out').addClass('animate-in').show();
 				p.addClass('active');
@@ -787,9 +790,10 @@
 		porftolioSingleJustClosed = true;
 				
 		// Play Sound Effect
+		/*
 		if (soundEffects) {
 			tick.play();
-		}
+		}*/
 		
 		$('html').addClass('p-animating');
 		
@@ -915,9 +919,10 @@
 				});
 				
 				// Wind Sound Effect
+				/*
 				if(soundEffects && !(isMobile()) ) {
 					wind.play();
-				}
+				}*/
 			}
 		}
 	}
@@ -933,9 +938,10 @@
 		showLoader();
 			
 		// Play Sound Effect
+		/*
 		if (soundEffects) {
 			tick.play();
-		}
+		}*/
 		
 		/* OPEN PANEL : load and show new content */
 		var cardContent = $('.card-content');
