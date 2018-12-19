@@ -52,19 +52,21 @@ Main components
 	}
 
 .cover-media {
-	position: relative; padding-top: 70%; /*filter: blur(20px);*/ background-size: cover; background-position: center center; transition: all 0.6s;
+	position: relative; padding-top: 70%; filter: grayscale(0.8); background-size: cover; background-position: center center; transition: all .6s;
 	}
 /* disabled blur animation due to poor mobile performance */
 /*.is-card-loaded .cover-media {
-	filter: blur(0);
-	}
+  filter: grayscale(0.8);
+	}*/
 .is-card-opened .cover-media {
-	transition: all 0.6s;
-	}	*/
-
+  transition: all .6s;
+  filter: grayscale(0.5);
+  }
+  
 .is-ajax-page-active .cover-media {
-	  padding-top: 60%;
-  	}
+	filter: grayscale(0.0);
+}
+
 
 /* Tablet Only Styles */
 /*@media only screen and (min-width: 768px) and (max-width: 991px) {

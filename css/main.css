@@ -2663,27 +2663,26 @@ a {
  	color: #396;
 	}
 a.deepchef {
-	color: #E37B66;
+	color: #54514d;
+	border-bottom: 2px solid #E37B66;
 }
 a.lemon {
-	color: #c4be1d;
+	color: #54514d;
+	border-bottom: 2px solid #c4be1d;
 }
 a.sirlexa {
-	color: #205c9a;
+	color: #54514d;
+	border-bottom: 2px solid #205c9a;
 }
-
-.underline--thin {
-	border-bottom: 1px solid currentColor;
-  }
 
 a.deepchef:hover {
-	color: #d56227;
+	color: #E37B66;
 }
 a.lemon:hover {
-	color: #ae8319;
+	color: #c4be1d;
 }
 a.sirlexa:hover {
-	color: #13365b;
+	color: #205c9a;
 }
 
 a:hover {
