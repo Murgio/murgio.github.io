@@ -1,108 +1,7 @@
 .hero {
     position: relative;
-    padding-top: 48px;
-}
-
-.hero-disk,
-.hero-sphere {
-	position: absolute;
-}
-
-.hero-disk {
-
-	svg {
-		width: 300px;
-		height: auto;
-	}
-}
-
-.hero-sphere {
-	display: none;
-
-	svg {
-		transform-origin: 50% 50%;
-		animation: sphere-rotation 60s linear infinite;
-	}
-}
-
-.hero-disk-1 {
-	top: 76px;
-	right: -140px;
-
-	svg {
-		transform-origin: 50% 100%;
-		animation: disk-rotation-alt 10s linear infinite alternate;
-	}
-}
-
-.hero-disk-2 {
-	top: -70px;
-	right: -88px;
-
-	svg {
-		transform-origin: 50% 0;
-		animation: disk-rotation 15s linear infinite alternate;
-	}
-}
-
-.hero-disk-3 {
-	bottom: 112px;
-	left: -186px;
-
-	svg {
-		transform-origin: 50% 100%;
-		animation: disk-rotation 10s linear infinite alternate;
-	}
-}
-
-.hero-disk-4 {
-	bottom: 25px;
-	left: -106px;
-
-	svg {
-		transform-origin: 50% 0;
-		animation: disk-rotation-alt 15s linear infinite alternate;
-	}
-}
-
-.hero-sphere-1 {
-	top: 316px;
-	right: 80px;
-}
-
-.hero-sphere-2 {
-	bottom: 591px;
-	left: 50px;
-}
-
-@keyframes disk-rotation {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(-30deg);
-	}
-}
-
-@keyframes disk-rotation-alt {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(20deg);
-	}
-}
-
-@keyframes sphere-rotation {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .hero-paragraph {
@@ -110,63 +9,107 @@
 }
 
 .hero-browser {
-	position: relative; /* To display all elements above the illustrations */
-    margin-top: 32px;
+    position: relative;
+    margin-top: 80px;
+}
 
-	img,
-	svg {
-		width: 100%;
-		height: auto;
-		overflow: visible;
-	}
+.hero-browser-inner {
+    position: relative; /* To display bubbles below the browser */
+
+    svg {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+}
+
+.bubble-1,
+.bubble-2,
+.bubble-3,
+.bubble-4 {
+    position: absolute;
+
+    svg {
+        height: auto;
+    }
+}
+
+.bubble-1 {
+    top: -15px;
+    left: 70px;
+
+    svg {
+        width: 34px;
+    }
+}
+
+.bubble-2 {
+    bottom: 0;
+    right: -30px;
+
+    svg {
+        width: 78px;
+    }
+}
+
+.bubble-3 {
+    left: -40px;
+    bottom: -40px;
+
+    svg {
+        width: 143px;
+    }
+}
+
+.bubble-4 {
+    top: -25px;
+    right: -54px;
+
+    svg {
+        width: 104px;
+    }
 }
 
 @include media( '>medium' ) {
 
     .hero {
-        padding-top: 88px;
-        padding-bottom: 24px;
+        padding-top: 80px;
+        padding-bottom: 120px;
     }
-
-	.hero-disk {
-
-		svg {
-			width: 600px;
-		}
-	}
-
-	.hero-sphere {
-		display: block;
-	}
-
-	.hero-disk-1 {
-		right: -260px;
-	}
-
-	.hero-disk-2 {
-		top: -100px;
-	}
-
-	.hero-disk-3 {
-		bottom: 253px;
-		left: -213px;
-	}
-
-	.hero-disk-4 {
-		bottom: 53px;
-		left: 31px;
-	}
-
-	.hero-title {
-		margin-bottom: 24px;
-	}
 
     .hero-paragraph {
-        padding-left: 24px;
-        padding-right: 24px;
+        margin-bottom: 40px;
+        padding-left: 72px;
+        padding-right: 72px;
     }
 
-	.hero-browser {
-	    margin-top: 64px;
-	}
+    .bubble-1,
+    .bubble-2,
+    .bubble-3,
+    .bubble-4 {
+
+        svg {
+            width: auto;
+        }
+    }
+
+    .bubble-1 {
+        top: 85px;
+        left: -30px;
+    }
+
+    .bubble-2 {
+        bottom: -8px;
+        right: -75px;
+    }
+
+    .bubble-3 {
+        left: -140px;
+        bottom: -120px;
+    }
+
+    .bubble-4 {
+        top: -35px;
+        right: -110px;
+    }
 }
