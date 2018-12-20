@@ -1326,7 +1326,7 @@ label {
 }
 
 .button-primary{
-    color:#fff !important;
+    color:#292e38 !important;
     transition:background .15s ease
 }
 .button-primary{
@@ -1366,6 +1366,14 @@ label {
 	justify-content: space-between;
 	align-items: center
 }
+
+.header-brand {
+	cursor: pointer;
+}
+
+.header-brand.animate.shake:hover {
+	animation: shake .6s ease-in-out both;
+  }
 
 .header-links {
 	display: inline-flex
@@ -1894,3 +1902,15 @@ main {
         opacity: 0;
     }
 }
+/* Lemon hover animation */
+@keyframes shake {
+	25% {
+	  transform: rotate(9deg);
+	}
+	50% {
+	  transform: rotate(-9deg);
+	}
+	100% {
+	  transform: rotate(0deg);
+	}
+  }
