@@ -116,8 +116,23 @@
                         function random() {
                           return Math.ceil(Math.random() * 100);
                         }
-                        
-                        var seriesCount = 20;
+
+                        // OLD MOBILE
+                        if (window.innerWidth < 320) {
+                            var seriesCount = 3;
+                        }
+                        // MOBILE
+                        else if (window.innerWidth < 700) {
+                            var seriesCount = 6;
+                        }
+                        // TABLET
+                        else if (window.innerWidth < 991) {
+                            var seriesCount = 10;
+                        }
+                        // DESKTOP
+                        else {
+                            var seriesCount = 18;
+                        }
 
                         
                         var chart = new Chartist.Line('.ct-chart', {
