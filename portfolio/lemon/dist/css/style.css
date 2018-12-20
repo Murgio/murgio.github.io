@@ -1769,26 +1769,26 @@ main {
 
 .ct-chart .ct-series.ct-series-a .ct-point {
 	stroke: #46dccb;
-	stroke-width: 10px;
+	stroke-width: 16px;
 	stroke-linecap: round;
 	animation: width-pulse 2s infinite;
   }
   
   .ct-chart .ct-series.ct-series-b .ct-point {
 	stroke: #848fe7;
-	stroke-width: 8px;
-	stroke-dasharray: 5px 2px;
+	stroke-width: 12px;
+	stroke-dasharray: 8px 3px;
   }
   
   .ct-chart .ct-series.ct-series-c .ct-point {
 	stroke: #fc5275;
-	stroke-width: 15px;
+	stroke-width: 22px;
 	stroke-linecap: square;
   }
   
   .ct-chart .ct-series.ct-series-d .ct-point {
 	stroke: #fee050;
-	stroke-width: 15px;
+	stroke-width: 22px;
   }
 
   /**
