@@ -1303,13 +1303,13 @@ label {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	box-shadow: 0 8px 24px rgba(32, 43, 54, 0.12);
+	box-shadow: 0 8px 24px rgba(54, 54, 32, 0.12);
 	mix-blend-mode: multiply;
 	transition: box-shadow .15s ease
 }
 
 .button-shadow:hover::before {
-	box-shadow: 0 8px 24px rgba(32, 43, 54, 0.25)
+	box-shadow: 0 8px 24px rgba(54, 54, 32, 0.12);
 }
 
 .button-sm {
@@ -1318,11 +1318,11 @@ label {
 }
 
 .button-sm.button-shadow::before {
-	box-shadow: 0 4px 16px rgba(32, 43, 54, 0.12)
+	box-shadow: 0 4px 16px rgba(54, 54, 32, 0.12);
 }
 
 .button-sm.button-shadow:hover::before {
-	box-shadow: 0 4px 16px rgba(32, 43, 54, 0.25)
+	box-shadow: 0 4px 16px rgba(54, 54, 32, 0.12);
 }
 
 .button-primary{
@@ -1334,8 +1334,8 @@ label {
     background:linear-gradient(65deg, #FFE470 0, #FFE23F 100%)
 }
 .button-primary:hover{
-    background:#3386ef;
-    background:linear-gradient(65deg, #1777ed 0, #4e95f0 100%)
+    background:rgb(211, 187, 53);
+    background:linear-gradient(65deg, rgb(220, 197, 96) 0, rgb(226, 201, 56) 100%)
 }
 
 
