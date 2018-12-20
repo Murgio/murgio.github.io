@@ -2668,7 +2668,7 @@ a.deepchef {
 }
 a.lemon {
 	color: #54514d;
-	border-bottom: 2px solid #c4be1d;
+	border-bottom: 2px solid #fee050;
 }
 a.sirlexa {
 	color: #54514d;
@@ -2679,7 +2679,7 @@ a.deepchef:hover {
 	color: #E37B66;
 }
 a.lemon:hover {
-	color: #c4be1d;
+	color: #E5C737;
 }
 a.sirlexa:hover {
 	color: #205c9a;

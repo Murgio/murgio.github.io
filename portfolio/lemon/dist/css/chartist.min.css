@@ -19,8 +19,8 @@
 }
 
 .ct-label {
-	fill: rgba(0, 0, 0, .4);
-	color: rgba(0, 0, 0, .4);
+	fill: rgba(255, 255, 255, .2);
+	color: rgba(255, 255, 255, .2);
 	font-size: .75rem;
 	line-height: 1
 }
@@ -187,7 +187,7 @@
 }
 
 .ct-line {
-	stroke-width: 4px
+	stroke-width: 3px
 }
 
 .ct-area {
@@ -209,33 +209,33 @@
 .ct-series-a .ct-line,
 .ct-series-a .ct-point,
 .ct-series-a .ct-slice-donut {
-	stroke: #d70206
+	stroke: #4d4d4d
 }
 
 .ct-series-a .ct-area,
 .ct-series-a .ct-slice-donut-solid,
 .ct-series-a .ct-slice-pie {
-	fill: #d70206
+	fill: #393939
 }
 
 .ct-series-b .ct-bar,
 .ct-series-b .ct-line,
 .ct-series-b .ct-point,
 .ct-series-b .ct-slice-donut {
-	stroke: #f05b4f
+	stroke: #7e7e7e
 }
 
 .ct-series-b .ct-area,
 .ct-series-b .ct-slice-donut-solid,
 .ct-series-b .ct-slice-pie {
-	fill: #f05b4f
+	fill: #aeaeae
 }
 
 .ct-series-c .ct-bar,
 .ct-series-c .ct-line,
 .ct-series-c .ct-point,
 .ct-series-c .ct-slice-donut {
-	stroke: #f4c63d
+	stroke: #dcdcdc
 }
 
 .ct-series-c .ct-area,
@@ -248,7 +248,7 @@
 .ct-series-d .ct-line,
 .ct-series-d .ct-point,
 .ct-series-d .ct-slice-donut {
-	stroke: #d17905
+	stroke: #8c8c8c
 }
 
 .ct-series-d .ct-area,

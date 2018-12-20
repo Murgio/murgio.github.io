@@ -1497,8 +1497,8 @@ label {
 	}
 	.hero-paragraph {
 		margin-bottom: 40px;
-		padding-left: 72px;
-		padding-right: 72px
+		padding-left: 44px;
+		padding-right: 44px
 	}
 	.bubble-1 svg,
 	.bubble-2 svg,
@@ -1776,9 +1776,9 @@ main {
 }
 
 .ct-chart .ct-series.ct-series-a .ct-point {
-	stroke: #46dccb;
-	stroke-width: 16px;
-	stroke-linecap: round;
+	stroke: #fc5275;
+	stroke-width: 12px;
+	stroke-linecap: square;
 	animation: width-pulse 2s infinite;
   }
   
@@ -1789,14 +1789,14 @@ main {
   }
   
   .ct-chart .ct-series.ct-series-c .ct-point {
-	stroke: #fc5275;
+	stroke: #fee050;
 	stroke-width: 22px;
-	stroke-linecap: square;
   }
   
   .ct-chart .ct-series.ct-series-d .ct-point {
-	stroke: #fee050;
-	stroke-width: 22px;
+	stroke: #46dccb;
+	stroke-width: 12px;
+	stroke-linecap: square;
   }
 
   /**
