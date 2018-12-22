@@ -1812,6 +1812,52 @@ main {
 	}
 }
 
+
+@-webkit-keyframes draw {
+	to {
+	  stroke-dashoffset: 0;
+	}
+  }
+  
+  @keyframes draw {
+	to {
+	  stroke-dashoffset: 0;
+	}
+  }
+
+  @-webkit-keyframes dashoffset {
+	0% {
+	  stroke-dashoffset: 0px;
+	}
+	100% {
+	  stroke-dashoffset: -20px;
+	}
+  }
+  @-moz-keyframes dashoffset {
+	0% {
+	  stroke-dashoffset: 0px;
+	}
+	100% {
+	  stroke-dashoffset: -20px;
+	}
+  }
+  @-ms-keyframes dashoffset {
+	0% {
+	  stroke-dashoffset: 0px;
+	}
+	100% {
+	  stroke-dashoffset: -20px;
+	}
+  }
+  @keyframes dashoffset {
+	0% {
+	  stroke-dashoffset: 0px;
+	}
+	100% {
+	  stroke-dashoffset: -20px;
+	}
+  }
+
 .ct-chart .ct-series.ct-series-a .ct-point {
 	stroke: #fc5275;
 	stroke-width: 12px;
@@ -1829,12 +1875,24 @@ main {
 	stroke-width: 22px;
   }
 
-.ct-chart2 .ct-series.ct-series-d .ct-line {
-	stroke-dasharray: 5px;
-	-webkit-animation: dashoffset 1s linear infinite;
-	-moz-animation: dashoffset 1s linear infinite;
-	-o-animation: dashoffset 1s linear infinite;
-	animation: dashoffset 1s linear infinite;
+  .ct-chart2 .ct-series.ct-series-c .ct-line {
+	stroke-dasharray: 1644;
+	stroke-dashoffset: 1644;
+	-webkit-animation: draw 5s 0s ease both;
+			animation: draw 5s 0s ease both;
+	fill: none;
+	stroke: #ffeedb;
+	opacity: 0.8;
+  }
+  
+  .ct-chart2 .ct-series.ct-series-d .ct-line {
+	stroke-dasharray: 1540;
+	stroke-dashoffset: 1540;
+	-webkit-animation: draw 5s 1s ease both;
+			animation: draw 5s 1s ease both;
+	fill: none;
+	stroke: #fee050;
+	opacity: 0.8;
   }
   /*
 .ct-chart .ct-series.ct-series-a .ct-point {
@@ -2421,38 +2479,6 @@ main {
 	}
   }
 
-@-webkit-keyframes dashoffset {
-  0% {
-    stroke-dashoffset: 0px;
-  }
-  100% {
-    stroke-dashoffset: -20px;
-  }
-}
-@-moz-keyframes dashoffset {
-  0% {
-    stroke-dashoffset: 0px;
-  }
-  100% {
-    stroke-dashoffset: -20px;
-  }
-}
-@-ms-keyframes dashoffset {
-  0% {
-    stroke-dashoffset: 0px;
-  }
-  100% {
-    stroke-dashoffset: -20px;
-  }
-}
-@keyframes dashoffset {
-  0% {
-    stroke-dashoffset: 0px;
-  }
-  100% {
-    stroke-dashoffset: -20px;
-  }
-}
 @-webkit-keyframes pulse {
   0% {
     stroke-dashoffset: 0px;
