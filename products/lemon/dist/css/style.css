@@ -135,6 +135,7 @@ div#cookie {
 	box-sizing: initial;
 	z-index:999;
   }
+
   div#cookie .close-button {
 	position: absolute;
 	cursor: pointer;
@@ -143,6 +144,13 @@ div#cookie {
 	width: 20px;
 	height: 20px;
   }
+
+  @media (max-width: 427px) {
+	div#cookie .close-button {
+		display: none
+	  }
+  }
+
   div#cookie .close-button:hover:before {
 	background-color: #fc5275;
   }
