@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Gilroy-Medium;
+    src: url("font/Gilroy-Medium.woff") format("woff"), url("font/Gilroy-Medium.ttf")  format("truetype");
+}
+
 html {
 	line-height: 1.15;
 	-ms-text-size-adjust: 100%;
@@ -121,6 +126,37 @@ img {
 svg:not(:root) {
 	overflow: hidden
 }
+
+div#cookie {
+	padding: 24px;
+	right: 0px;
+	bottom: 0px;
+	position: fixed;
+	box-sizing: initial;
+	z-index:999;
+  }
+  div#cookie .close-button {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 20px;
+  }
+  div#cookie .close-button:hover:before {
+	background-color: #fc5275;
+  }
+  div#cookie .close-button:before {
+	display: inline-block;
+	width: 1.4em;
+	height: 1.4em;
+	background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-388.5%20313.5%2014%2014%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M-388.5%20327.281v-1.181l5.709-5.709-5.709-5.709v-1.182h1.181l5.709%205.709%205.708-5.709h1.182v1.182l-5.708%205.709%205.708%205.709v1.182h-1.182l-5.708-5.709-5.709%205.709h-1.181z%22%2F%3E%3C%2Fsvg%3E") 50%/.6em no-repeat;
+	content: '';
+	font-size: 14px;
+	line-height: 1.2;
+	-webkit-transition: background-color .4s;
+	transition: background-color .4s;
+  }
 
 button,
 input,
@@ -395,7 +431,7 @@ h6,
 .h6 {
 	clear: both;
 	color: #202B36;
-	font-family: "Roboto", sans-serif;
+	font-family: "Gilroy-Medium", sans-serif;
 	font-weight: 500
 }
 
@@ -1477,8 +1513,8 @@ label {
 }
 
 .bubble-2 {
-	bottom: 0;
-	right: -30px
+	bottom: -36px;
+	right: -10px
 }
 
 .bubble-2 svg {
@@ -1486,8 +1522,8 @@ label {
 }
 
 .bubble-3 {
-	left: -40px;
-	bottom: -40px
+	left: 0px;
+	bottom: -50px
 }
 
 .bubble-3 svg {
@@ -1495,7 +1531,7 @@ label {
 }
 
 .bubble-4 {
-	top: -25px;
+	top: -10px;
 	right: -54px
 }
 
@@ -1504,8 +1540,8 @@ label {
 }
 
 .bubble-5 {
-	left: -40px;
-	bottom: -40px
+	left: 10px;
+	bottom: -10px
 }
 
 .bubble-5 svg {
