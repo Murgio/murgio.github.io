@@ -286,17 +286,17 @@
                                                 <!-- .contact-form -->
                                                 <div class="contact-form">
                                                 
-                                                    <form id="contact-form" class="validate-form" method="post" action="https://formspree.io/murgio.studio@gmail.com">
+                                                    <form id="contact-form" class="validate-form" method="POST" action="https://formspree.io/murgio.studio@gmail.com">
                                                     
                                                         <!-- enter mail subject here -->
-                                                        <input type="hidden" name="subject" id="subject" value="You have a new message from Muriz Serifovic!">
+                                                        <input type="hidden" name="_subject" id="subject" value="You have a new message from Muriz Serifovic!">
                                                         
                                                         <p>
                                                           <input placeholder="Name" type="text" name="name" id="name" class="required">
                                                         </p>
                                                         
                                                         <p>
-                                                          <input placeholder="Email" type="email" name="email" id="email" class="required email">
+                                                          <input placeholder="Email" type="email" name="_replyto" id="email" class="required email">
                                                         </p>
                                                         
                                                         <p class="antispam">Leave this empty if you are a human :
@@ -308,7 +308,8 @@
                                                         </p>
                                                         
                                                         <p>
-                                                          <button class="submit button primary">Send</button>
+                                                        <input type="submit" value="Send">
+                                                          <!--<button class="submit button primary">Send</button>-->
                                                         </p>
                                                     
                                                     </form>

@@ -610,6 +610,7 @@
 	
 	// ------------------------------
 	// SETUP CONTACT FORM
+	/*
 	function setupContactForm() {
 		
 		var contactForm = $( '#contact-form' );
@@ -658,7 +659,7 @@
 			};
 		}
 		
-	}	
+	}	*/
 	// ------------------------------
 	
 		
