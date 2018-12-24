@@ -254,10 +254,10 @@
 		setupForms();
 		
 		// CONTACT FORM
-		setupContactForm();
+		//setupContactForm();
 		
 		// MAP
-		setupMap();
+		//setupMap();
 		
 		// TABS
 		tabs();
@@ -671,6 +671,7 @@
 		https://developers.google.com/maps/documentaztion/javascript/examples/marker-simple
 		
 	*/
+	/*
 	function setupMap() {
 			
 		var mapCanvas = $('#map-canvas');
@@ -721,7 +722,7 @@
 			});
 		}
 		
-	}	
+	}	*/
 	// ------------------------------	
 	
 	
