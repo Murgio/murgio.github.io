@@ -44,6 +44,10 @@ pre {
 	font-size: 1em
 }
 
+del {
+	color: #FFF
+}
+
 a {
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects
