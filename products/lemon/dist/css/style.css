@@ -11,7 +11,7 @@ html {
 
 body {
 	margin: 0;
-	--color-bg: #292e39;
+	--color-bg: #1b1c1c;
 	--color-text: #ddd;
 	--color-text-subtle: #fee050;
 }
@@ -379,6 +379,11 @@ a {
 a:hover, a:active {
 	outline: 0;
 	text-decoration: none
+}
+
+a.electron-link {
+	text-decoration: none;
+	border-bottom: 1px solid #4a848e;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -1275,7 +1280,7 @@ input.button:hover::before {
 }
 
 .button-primary {
-	color: #292e38 !important;
+	color: #1b1c1c !important;
 	transition: background .15s ease
 }
 
@@ -1664,7 +1669,7 @@ main {
 	line-height: 20px;
 	letter-spacing: 0px;
 	color: #889BB0;
-	background: #292e37;
+	background: #1b1c1c;
 	z-index: 1
 }
 
@@ -1867,7 +1872,7 @@ main {
  */
 
 :root {
-	--color-bg: #252a33;
+	--color-bg: #1b1c1c;
 	--color-text: #eee;
 	--color-text-subtle: #a2a2a2;
 }
@@ -2028,6 +2033,17 @@ main {
 	flex-wrap: wrap;
 	background: #fff;
 	padding: 32px 24px
+}
+
+.powered-inner {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 32px 24px
+}
+
+.powered-inner>* {
+	width: 100%
 }
 
 .testimonial-inner>* {
