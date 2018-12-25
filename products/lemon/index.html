@@ -16,10 +16,10 @@
    <title>Lemon | Code Editor for Data Analysis</title>
    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">
    <link rel="stylesheet" href="dist/css/style.css">
-   <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <script src="dist/js/vendor/scrollreveal.min.js"></script>
+   <script src="dist/js/vendor/jquery-3.2.1.min.js"></script>
    <link rel="stylesheet" href="dist/css/chartist.min.css">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.0.2/css/jquery.terminal.min.css" rel="stylesheet" />
+   <link href="dist/css/jquery.terminal.min.css" rel="stylesheet" />
 </head>
 <div id="cookie">
    <span class="close-button" title="Close" onclick='$("#cookie").fadeOut(300, function() { $(this).remove(); $(".close-button").remove(); setCookie("privacyPolicy","1", 30); });'></span>
@@ -89,8 +89,8 @@
             <div class="container-sm">
                <div class="hero-inner">
                   <h1 class="hero-title h2-mobile mt-0 is-revealing">Data Analysis. <strong> Made simple.</strong></h1>
-                  <p class="hero-paragraph is-revealing">Lemon makes quick data plotting possible in under three lines
-                     of code. With any kind of data.</p>
+                  <p class="hero-paragraph is-revealing">Lemon makes data plotting possible in under three lines
+                     of code. With any kind of numerical data.</p>
                   <form class="hero-form newsletter-form field field-grouped is-revealing validate-form" method="POST"
                      action="https://formspree.io/murgio.studio@gmail.com">
                      <div class="control control-expanded">
@@ -665,10 +665,10 @@
                </div>
                <ul class="footer-links list-reset">
                   <li>
-                     <a href="https://muriz.me">About me</a>
+                     <a href="https://muriz.me" target="_blank">About me</a>
                   </li>
                   <li>
-                     <a href="https://muriz.me/#/contact">Contact</a>
+                     <a href="https://muriz.me/#/contact" target="_blank">Contact</a>
                   </li>
                </ul>
                <ul class="footer-social-links list-reset">
@@ -694,16 +694,16 @@
                <div class="footer-love">Made with <del>
                      <span style='color: #FFF; text-decoration: none; cursor: wait;'>love</span></del> <i>a keyboard</i>
                   in Switzerland</div>
-               <div class="footer-copyright">&copy; 2018 Muriz Serifovic</div>
+               <div class="footer-copyright">&copy; <a href="https://muriz.me" target="_blank">2018 Muriz Serifovic</a></div>
             </div>
          </div>
       </footer>
       <!-- FOOTER-->
 
    </div>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.0.2/js/jquery.terminal.min.js"></script>
+   <script src="dist/js/vendor/jquery.terminal.min.js"></script>
    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/316871/termynal.min.js"></script>
+   <script src="dist/js/vendor/termynal.min.js"></script>
    <script src="dist/js/jquery.validate.min.js"></script>
    <script src="dist/js/main.min.js"></script>
 </body>
