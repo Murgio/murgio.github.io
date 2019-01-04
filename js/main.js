@@ -37,7 +37,7 @@
 			tick = document.createElement('audio');
 			tick.setAttribute('src', $('html').data('audio-tick'));
 		} */
-		// ------------------------------			
+		// ------------------------------
 					
 		
 		// SET BG IMAGES
@@ -79,8 +79,12 @@
 			
 			// show card
 			$('#card-open, .cover-link').on('click', function(event){
-				event.preventDefault();
-				showCard();
+				//event.preventDefault();
+				showCard();	
+				//var new_url = $( 'a[data-slug=' + 'about' + ']' ).data('file-url');
+				//setTimeout(function(){ showPage(new_url); }, 1100);
+				setTimeout(function(){ $.address.path('/about'); }, 1100);
+				//$('.card-nav a[href="#' +  '/about' +'"]').parent().addClass('current_page_item').siblings().removeClass('current_page_item');
 			});
 			// close card
 			$('.close-card').on('click', function(){
@@ -107,7 +111,6 @@
 	
 				menu_link.attr('href', '#/' + slug);
 				menu_link.data('file-url', file_url);
-				
 			});
 			
 			
@@ -290,7 +293,6 @@
 		// PORTFOLIO DETAILS
 		// Show details
 		$(".one-page-layout .media-box .ajax, .one-page-layout .portfolio-nav .ajax a").on('click',function(event) {
-			
 			event.preventDefault();
 
 			var url = $(this).attr('href');
@@ -925,6 +927,7 @@
 				if(soundEffects && !(isMobile()) ) {
 					wind.play();
 				}*/
+				// TODO: Implement Click Animation over About Me Button
 			}
 		}
 	}
@@ -993,7 +996,7 @@
 		
 		$('.card-content').empty();
 		$.address.path('');
-		history.pushState("", document.title, window.location.pathname);
+		//history.pushState("", document.title, window.location.pathname);
 		$("html").removeClass('is-ajax-page-loaded is-ajax-page-active');
 
 	}
