@@ -86,7 +86,7 @@ Main components
 	  }
   .one-page-layout:not(.is-card-open),
   .one-page-layout:not(.is-card-open) body {
-	  overflow: hidden; height: 100%;
+    height: 100%;
 	  }
   .card-triggers .button {
       margin-right: 15px; padding: 22px 42px;

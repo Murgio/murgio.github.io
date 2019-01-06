@@ -40,7 +40,7 @@ html {
 	font-size: 100%; -webkit-font-smoothing: antialiased;
 	}
 body {
- 	 font-size: 14px; line-height: 1.8; -webkit-text-size-adjust: none;
+	  font-size: 14px; line-height: 1.8; -webkit-text-size-adjust: none;
 	}
 a {
  	color: #096; text-decoration: none; outline: none;
@@ -685,7 +685,7 @@ textarea,
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 4rem;
-  padding-top: 0rem;
+  padding-bottom: 2rem;
   margin: 0 auto;
   width: max-content;
 }
