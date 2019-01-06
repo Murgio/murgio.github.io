@@ -10,6 +10,9 @@ body {
 h1, .entry-title {
 	font-family: 'Playfair Display', serif;
 	}
+	.entry-title-blog {
+		font-family: 'Playfair Display', serif;
+		}
 .card-intro h1 {
 	font-weight: 400; letter-spacing: 0;
 	}
@@ -18,6 +21,10 @@ h1, .entry-title {
 h1,
 .entry-title {
 	font-weight: 400;
+	}
+.entry-title-blog {
+	font-weight: 400;
+	font-size: 36px;
 	}
 
 /* Heading 1 Font Size */
