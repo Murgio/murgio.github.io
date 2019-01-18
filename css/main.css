@@ -675,7 +675,30 @@ textarea,
 	padding: 0; margin: 0;
 	}
 
+/* RESEARCH WORK */
+.cards-wrapper-blog-research {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: 1fr;
+	grid-gap: 2rem;
+	padding-top: 1em;
+	width: max-content;
+  }
 
+.research .tags-blog {
+	font-family: 'Heebo' !important;
+	display: flex;
+}
+
+.research .tags-blog .tag-blog {
+  font-size: 0.85em;
+  background: #ddd8d3;
+  border-radius: 0.3rem;
+  padding: 0 0.7em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+}
 
 /* BLOG CARD */
 
@@ -684,7 +707,7 @@ textarea,
   justify-content: center;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
+  grid-gap: 2rem;
   padding-bottom: 2rem;
   margin: 0 auto;
   width: max-content;
@@ -777,6 +800,7 @@ p.card-blog-p {
 }
 
 @media screen and (max-width: 991px) {
+	.cards-wrapper-blog-research,
   .cards-wrapper-blog {
     visibility: hidden;
   }
@@ -786,6 +810,7 @@ p.card-blog-p {
 }
 
 @media screen and (max-width: 500px) {
+	.cards-wrapper-blog-research,
   .cards-wrapper-blog {
     visibility: hidden;
   }
@@ -2797,6 +2822,9 @@ a.sirlexa {
 	color: #54514d;
 	border-bottom: 2px solid #205c9a;
 }
+a.research {
+	color: #54514d;
+}
 
 a.deepchef-mobile {
 	color: #FFF;
@@ -2832,6 +2860,13 @@ a.lemon:hover {
 }
 a.sirlexa:hover {
 	color: #205c9a;
+}
+
+a.research:hover {
+	color: #837b74;
+}
+a.research:focus {
+	color: #837b74;
 }
 
 a:hover {
