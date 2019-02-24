@@ -1,0 +1,14 @@
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+img {
+  display: none;
+}
+
+#canvas {
+  -webkit-filter: blur(0.5px) contrast(1.2);
+          filter: blur(0.5px) contrast(1.2);
+}
