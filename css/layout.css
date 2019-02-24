@@ -19,7 +19,7 @@ Main components
   	max-width: 500px; margin: 20px auto; font-size: 1.0rem; font-weight: 300;
 	}
 .card {
-	margin: 0 auto; position: relative; background: #fff;
+	margin: 0 auto; position: relative; background: #000000;
 	}
 .cover-img {
   	position: relative; display: none;
@@ -52,7 +52,7 @@ Main components
 	}
 
 .cover-media {
-	position: relative; padding-top: 70%; filter: grayscale(0.8); background-size: cover; background-position: center center; transition: all .6s;
+	position: relative; padding-top: 70%; background-size: cover; background-position: center center; transition: all .6s;
 	}
 /* disabled blur animation due to poor mobile performance */
 /*.is-card-loaded .cover-media {
@@ -60,12 +60,12 @@ Main components
 	}*/
 .is-card-opened .cover-media {
   transition: all .6s;
-  filter: grayscale(0.5);
+  /*filter: grayscale(0.5);*/
   }
-  
+/*
 .is-ajax-page-active .cover-media {
 	filter: grayscale(0.0);
-}
+}*/
 
 
 /* Tablet Only Styles */

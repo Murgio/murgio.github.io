@@ -1551,7 +1551,7 @@ button:not(.button):hover {
 	font-size: 11px; padding: 9px 18px;
 	}
 .button:after {
-	width: 0%; height: 100%; top: 0; left: 0; background: #345; content: ''; position: absolute; z-index: -1; transition: all 0.3s;
+	width: 0%; height: 100%; top: 0; left: 0; background: #345; content: ''; position: absolute; z-index: -1;/* transition: all 0.3s;*/
 	}
 .button:hover,
 .button:active {
@@ -1571,7 +1571,9 @@ button:not(.button):hover {
 .button i:before {
 	font-size: 120%;
 	}
-
+.card-triggers-medium {
+	text-align: center;
+}
 
 /* TABS */
 .tabs {
