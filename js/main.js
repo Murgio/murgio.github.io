@@ -87,7 +87,7 @@
 				//$('.card-nav a[href="#' +  '/about' +'"]').parent().addClass('current_page_item').siblings().removeClass('current_page_item');
 			});
 			// close card
-			$('.close-card').on('click', function(){
+			$('.close-card, .close-card-mobile').on('click', function(){
 				$('html').removeClass('is-card-open is-card-opened');
 				$('.close-card').removeClass('is-visible');
 				

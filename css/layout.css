@@ -49,7 +49,11 @@ Main components
 /* Close Card */
 .close-card {
  	display: none;
-	}
+  }
+  
+.close-card-mobile {
+  pointer-events: none;
+  }
 
 .cover-media {
 	position: relative; padding-top: 70%; background-size: cover; background-position: center center; transition: all .6s;

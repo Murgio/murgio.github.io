@@ -880,12 +880,14 @@ p.card-blog-p {
 		}
 	
 	.cover-media {
-		padding: 0; height: 100vh;
+		padding: 0; height: 100vh; background-position-x: 25%;
 		}
 	.is-ajax-page-active .cover-media {
-		padding: 0; height: 66vw !important;
+		padding: 0; height: 76vw !important;
 		}
-	
+	.close-card-mobile {
+		pointer-events: all;
+		}
 	/* MENU */	
 	.is-card-loaded .card-nav ul li {
 		opacity: 1; transform: scale(1); visibility: visible;
@@ -999,7 +1001,7 @@ p.card-blog-p {
 
 /* SERVICE */
 .service {
-    padding: 0.2em 0;
+    padding: 1em 0;
 	}
 	.service i,
 	.service img { 
@@ -2824,6 +2826,10 @@ a.sirlexa {
 	color: #54514d;
 	border-bottom: 2px solid #205c9a;
 }
+a.sharead {
+	color: #54514d;
+	border-bottom: 2px solid #71559a;
+}
 a.research {
 	color: #54514d;
 }
@@ -2843,7 +2849,11 @@ a.sirlexa-mobile {
 	font-weight: 400;
 	border-bottom: 1px solid #205c9a;
 }
-
+a.sharead-mobile {
+	color: #FFF;
+	font-weight: 400;
+	border-bottom: 1px solid #71559a;
+}
 a.deepchef-mobile:hover {
 	color: #FFF;
 }
@@ -2851,6 +2861,9 @@ a.lemon-mobile:hover {
 	color: #FFF;
 }
 a.sirlexa-mobile:hover {
+	color: #FFF;
+}
+a.sharead-mobile:hover {
 	color: #FFF;
 }
 
@@ -2862,6 +2875,9 @@ a.lemon:hover {
 }
 a.sirlexa:hover {
 	color: #205c9a;
+}
+a.sharead:hover {
+	color: #71559a;
 }
 
 a.research:hover {
