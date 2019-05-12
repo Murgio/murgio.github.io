@@ -1,5 +1,5 @@
  
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,600,700|Open+Sans:400,700');
 /* --------------------------------------------
 	
 	main.css : main style file
@@ -683,6 +683,7 @@ textarea,
 	grid-template-columns: 1fr;
 	grid-gap: 2rem;
 	padding-top: 1em;
+	padding-bottom: 4rem;
 	width: max-content;
   }
 
@@ -692,13 +693,37 @@ textarea,
 }
 
 .research .tags-blog .tag-blog {
-  font-size: 0.85em;
+  font-size: 0.9em;
   background: #ddd8d3;
   border-radius: 0.3rem;
   padding: 0 0.7em;
   margin-right: 0.5em;
   line-height: 1.5em;
 }
+.research .tags-blog .tag-blog-hot {
+	font-size: 0.9em;
+	background: #fed8b2;
+	border-radius: 0.3rem;
+	padding: 0 0.7em;
+	margin-right: 0.5em;
+	line-height: 1.5em;
+  }
+  .research .tags-blog .tag-blog-hotter {
+	font-size: 0.9em;
+	background: #f9a084;
+	border-radius: 0.3rem;
+	padding: 0 0.7em;
+	margin-right: 0.5em;
+	line-height: 1.5em;
+  }
+  .research .tags-blog .tag-blog-hottest {
+	font-size: 0.9em;
+	background: #fd8080;
+	border-radius: 0.3rem;
+	padding: 0 0.7em;
+	margin-right: 0.5em;
+	line-height: 1.5em;
+  }
 
 /* BLOG CARD */
 
@@ -708,20 +733,19 @@ textarea,
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
-  padding-bottom: 2rem;
   margin: 0 auto;
   width: max-content;
 }
 
 .card-blog {
 	font-family: 'Heebo' !important;
-  --bg-filter-opacity: 0.45;
+  --bg-filter-opacity: 0.4;
   background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
-  height: 20em;
-  width: 15em;
+  height: 20.8em;
+  width: 14.8em;
   font-size: 1.5em;
   color: white;
-  border-radius: 1em;
+  border-radius: 1.1em;
   padding: 1em;
   /*margin: 2em;*/
   display: flex;
@@ -730,7 +754,6 @@ textarea,
   background-position: center;
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
   transition: box-shadow .3s ease-out, transform .3s ease-out, opacity .2s ease-out;
-  transition-delay: .1s;
   position: relative;
   overflow: hidden;
   border: 0px solid #bcb1a7;
@@ -752,9 +775,9 @@ textarea,
 
 h2.card-blog-h1 {
 	font-family: 'Heebo' !important;
-	font-weight: 700;
+	font-weight: 600;
 	margin: 0;
-	font-size: 1.4em !important;
+	font-size: 1.3em !important;
 	line-height: 1.2em !important;
 }
 
@@ -794,7 +817,7 @@ p.card-blog-p {
 /* MEDIA QUERIES */
 @media screen and (max-width: 1185px) {
   .cards-wrapper-blog {
-	grid-template-columns: 1fr 1fr 0fr;
+	grid-template-columns: 1fr 1fr;
 	grid-gap: 2rem;
   }
 }
