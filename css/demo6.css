@@ -32,7 +32,7 @@ h1,
 
 
 /* Intro Text Font Size */
-@media only screen and (min-width: 992px) { .card-intro p { font-size: 22px; } }
+@media only screen and (min-width: 992px) { .card-intro p { font-size: 20px; } }
 	
 
 /* Grid Title Font Weight */

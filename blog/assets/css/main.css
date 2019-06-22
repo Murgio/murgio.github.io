@@ -8977,7 +8977,7 @@ a.text-dark:hover {
   border-radius: 0px 30px 30px 0px; }
 
 .navbar {
-  box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
   transition: all .08s;
   font-weight: 400; }
   .navbar .highlight .nav-link {
