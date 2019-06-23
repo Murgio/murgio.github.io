@@ -84,14 +84,18 @@
 				//var new_url = $( 'a[data-slug=' + 'about' + ']' ).data('file-url');
 				//setTimeout(function(){ showPage(new_url); }, 1100);
 				setTimeout(function(){ 
-					$.address.path('/about'); 
-					$('.card-intro').toggle();
+					$.address.path('/about');
+					if (!isMobile()) {
+						$('.card-intro').toggle();
+					}
 				}, 560);
 				//$('.card-nav a[href="#' +  '/about' +'"]').parent().addClass('current_page_item').siblings().removeClass('current_page_item');
 			});
 			// close card
 			$('.close-card, .close-card-mobile').on('click', function(){
-				$('.card-intro').toggle();
+				if (!isMobile()) {
+					$('.card-intro').toggle();
+				}
 				$('html').removeClass('is-card-open is-card-opened');
 				$('.close-card').removeClass('is-visible');
 				
