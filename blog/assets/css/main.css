@@ -7719,6 +7719,7 @@ a.text-lightblue:hover, a.text-lightblue:focus {
 
   @media (min-width: 1200px) {
     .study-left {
+      z-index: 42;
       position: fixed !important;
       margin-right: -15px !important;
       margin-left: -15px !important;
