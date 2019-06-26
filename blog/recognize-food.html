@@ -7,189 +7,694 @@
 	<link rel="icon" type="image/png" href="/blog/assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Muriz's Thought Fabrik | Recognize Food with Keras</title>
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-		name='viewport' />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'name='viewport' />
 	<meta name="author" content="Muriz Serifovic">
 	<meta name="keywords" content="muriz serifovic, machine learning, deep learning, data science, blog">
 	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Source+Sans+Pro:400,600,700" rel="stylesheet">
 	<!-- Font Awesome Icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<!-- Main CSS -->
 	<link href="/blog/assets/css/main.css" rel="stylesheet" />
+	<!--Code Syntax-->
+	<link rel="stylesheet" href="/blog/assets/css/vendor/prism.css"/>
 	<!-- Google Analytics -->
 	<script>
-			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-			ga('create', 'UA-89876244-3', 'auto');
-			ga('require', 'maxScrollTracker');
-			ga('require', 'outboundLinkTracker');
-			ga('send', 'pageview');
-		  </script>
-		  <script async src='https://www.google-analytics.com/analytics.js'></script>
-		  <script async src="/js/autotrack.js"></script>
-		  <!-- End Google Analytics -->
+		window.ga = window.ga || function () {
+			(ga.q = ga.q || []).push(arguments)
+		};
+		ga.l = +new Date;
+		ga('create', 'UA-89876244-3', 'auto');
+		ga('require', 'maxScrollTracker');
+		ga('require', 'outboundLinkTracker');
+		ga('send', 'pageview');
+	</script>
+	<script async src='https://www.google-analytics.com/analytics.js'></script>
+	<script async src="/js/autotrack.js"></script>
+	<!-- End Google Analytics -->
 </head>
+
 <body>
 	<!--------------------------------------
 NAVBAR
 --------------------------------------->
-<nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
-	<div class="container">
-		<a class="navbar-brand" href="/blog"><strong>Muriz's Thought Fabrik</strong></a>
-		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02"
-			aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="navbar-collapse collapse" id="navbarColor02" style="">
-			<ul class="navbar-nav mr-auto d-flex align-items-center">
-				<li class="nav-item">
-					<a class="nav-link" href="/blog/tag/deep-learning">Deep Learning</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/blog/tag/python">Python</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/blog/tag/tensorflow">TensorFlow</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="/blog/study/music">Music with Machine Learning <span class="badge badge-lightblue">study</span></a>
-				</li>
-			</ul>
-			<ul class="navbar-nav ml-auto d-flex align-items-center">
+	<nav class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="/blog"><strong>Muriz's Thought Fabrik</strong></a>
+			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02"
+				aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-collapse collapse" id="navbarColor02" style="">
+				<ul class="navbar-nav mr-auto d-flex align-items-center">
 					<li class="nav-item">
-							<a class="nav-link" href="/">About Me</a>
-						</li>
+						<a class="nav-link" href="/blog">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/blog/tag/deep-learning">Deep Learning</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/blog/tag/python">Python</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/blog/tag/tensorflow">TensorFlow</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/blog/study/music">Music with Machine Learning <span
+								class="badge badge-lightblue">study</span></a>
+					</li>
 				</ul>
+				<ul class="navbar-nav ml-auto d-flex align-items-center">
+					<li class="nav-item">
+						<a class="nav-link" href="/">About Me</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-	</div>
-</nav>
+	</nav>
 	<!-- End Navbar -->
-    
-<!--------------------------------------
+
+	<!--------------------------------------
 HEADER
 --------------------------------------->
-<div class="container">
+	<div class="container" style="max-width: 1440px;">
 		<div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
 			<div class="h-100 tofront">
-				<div class="row justify-content-between">
-					<div class="col-md-6 pt-6 pb-6 pr-4 align-self-center">
+				<div class="d-md-flex justify-content-center justify-content-between">
+					<div class="pt-4 pb-4 pt-md-5 pb-md-5 pr-md-5 align-self-center">
 						<p class="text-uppercase font-weight-bold">
-							<a class="text-danger" href="/blog/tag/tensorflow">TensorFlow</a>
-						</p>
+						<a class="text-danger" href="/blog/tag/tensorflow">TensorFlow</a>
+					</p>
 						<h1 class="display-4 secondfont mb-3 font-weight-bold">Image-to-Recipe Translation with Deep Convolutional Neural Networks</h1>
-						<p class="mb-3">
-								We present a novel retrieval-based approach for recipe prediction using a re-ranking scheme.
-						</p>
+						<p class="mb-3 text-muted d-none d-md-block">We present a novel retrieval-based approach for recipe prediction using a re-ranking scheme.</p>
 						<div class="d-flex align-items-center">
-							<img class="rounded-circle" src="/blog/assets/img/demo/me.png" width="50">
-							<small class="ml-2" data-toggle="tooltip" data-placement="right" title="" data-original-title="">Muriz Serifovic <span class="text-muted d-block">Sep 09 2018 &middot; 13 min. read</span>
+							<a class="mr-3">
+							<!-- <a tabindex="0" class="mr-3" data-placement="right" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="" data-original-title="Muriz Serifovic"> -->
+								<img alt=''
+									src='/blog/assets/img/demo/me.png'
+									class='avatar avatar-60 photo rounded-circle imgavt' height='60' width='60' />
+							</a>
+							<small>
+								<a class="text-muted mb-2">
+								<!-- <a tabindex="0" class="text-muted mb-2" data-placement="right" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="" data-original-title="Muriz Serifovic" style="text-decoration : none"> -->
+									Written by <span class="text-capitalize">Muriz Serifovic</span>
+								</a>
+								<span class="text-muted d-block">
+									<span class="post-date">
+										<time class="post-date">Sept 09 2018</time>
+									</span>
+									&middot;<span class="readingtime">13 min read</span>
+								</span>
 							</small>
 						</div>
 					</div>
-					<div class="col-md-6 pr-0">
-						<img src="/images/blog/01-large.png" style="background-size: cover; object-fit: cover; height: 550px;">
+					<div class="col-12 col-md-6 pr-0 pl-0 align-self-center text-right bg-gray">
+						<img width="850" height="674"
+							src="/blog/assets/img/demo/dcnn.png"
+							class="featured-image rounded img-fluid" alt=""
+							srcset="/blog/assets/img/demo/dcnn.png 750w, /blog/assets/img/demo/dcnn.png 300w"
+							sizes="(max-width: 750px) 100vw, 750px" />
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Header -->
-		
-	<!--------------------------------------
+		<!-- End Header -->
+
+		<!--------------------------------------
 	MAIN
 	--------------------------------------->
-	<div class="container pt-4 pb-4">
-		<div class="row justify-content-center">
-			<div class="col-md-12 col-lg-8">
-				<article class="article-post">
-				<p>
-					 Holy grail funding non-disclosure agreement advisor ramen bootstrapping ecosystem. Beta crowdfunding iteration assets business plan paradigm shift stealth mass market seed money rockstar niche market marketing buzz market.
-				</p>
-				<p>
-					 Burn rate release facebook termsheet equity technology. Interaction design rockstar network effects handshake creative startup direct mailing. Technology influencer direct mailing deployment return on investment seed round.
-				</p>
-				<p>
-					 Termsheet business model canvas user experience churn rate low hanging fruit backing iteration buyer seed money. Virality release launch party channels validation learning curve paradigm shift hypotheses conversion. Stealth leverage freemium venture startup business-to-business accelerator market.
-				</p>
-				<p>
-					 Freemium non-disclosure agreement lean startup bootstrapping holy grail ramen MVP iteration accelerator. Strategy market ramen leverage paradigm shift seed round entrepreneur crowdfunding social proof angel investor partner network virality.
-				</p>
-				</article>
-			</div>
-		</div>
-	</div>
-		
-	<div class="container pt-4 pb-4">
-		<h5 class="font-weight-bold spanborder"><span>Read next</span></h5>
-		<div class="row">
-			<div class="col-lg-6">
-				<div class="card border-0 mb-4 box-shadow h-xl-300">
-					<div style="background-image: url(/blog/assets/img/demo/3.jpg); height: 150px; background-size: cover; background-repeat: no-repeat;">
-					</div>
-					<div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-						<h2 class="h4 font-weight-bold">
-						<a class="text-dark" href="#">Brain Stimulation Relieves Depression Symptoms</a>
-						</h2>
-						<p class="card-text">
-							 Researchers have found an effective target in the brain for electrical stimulation to improve mood in people suffering from depression.
+		<div class="container pt-4 pb-4">
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-8">
+					<article class="article-post">
+						<p>
+							Hardly any other area affects human well-being to a similar extent as nutrition. Every day
+							countless of food pictures are published from users on social networks; from the first
+							home-made cake to the top Michelin dish, the joy is shared with you in case a dish was
+							successfully cooked.
 						</p>
-						<div>
-							<small class="d-block"><a class="text-muted" href="./author.html">Favid Rick</a></small>
-							<small class="text-muted">Dec 12 · 5 min read</small>
+						<blockquote>
+							It is a fact that no matter how different we might be from each other, good food is
+							appreciated by everyone.
+						</blockquote>
+						<p>
+							Advances in the classification of individual cooking ingredients are sparse. The problem is
+							that there are almost no public edited records available. This work deals with the problem
+							of <mark>automated recognition</mark> of a photographed cooking dish and the subsequent output of the
+							appropriate recipe. The distinction between the difficulty of the chosen problem and
+							previous supervised classification problems is that there are large overlaps in food dishes
+							(aka <mark>high intra-class similarity</mark>), as dishes of different categories may look very similar
+							only in terms of image information.
+						</p>
+						<div class="wp-block-image">
+							<figure class="aligncenter">
+								<a>
+									<img src="https://cdn-images-1.medium.com/max/800/1*hM0kc2J9etdjJNPjF2kE_Q.jpeg" alt="" height="379" style="object-fit: cover; backgound-size: cover;">
+								</a
+								><figcaption>
+									Grilled fruit may look like some sort of grilled meat. Looks similar, but doesn’t taste quite similar!
+								</figcaption>
+							</figure>
+						</div>
+						<p>
+							According to the current state, the largest German-language cooking community with more than 350'000
+							recipes will be scraped and analyzed. Feeding this data into a re-ranking scheme constisting of a combination of cooking
+							court recognition using Convolutional Neural Networks (short CNN) and the scores of the
+							nearest neighbors (Next-Neighbor Classification) in a record of over 800,000 images will yield accurate recipe prediction given a new, unseen image query.
+						</p>
+						<p>
+							This combination helps find the correct recipe more likely, as the top-k categories of the CNN
+							are compared to the next-neighbor category with ranked correlation. Rank correlation based
+							approaches such as Kendall Tau essentially measure the probability of two items being in the
+							same order in the two ranked lists. Mathematically, Kendall Tau is computed as
+							$$
+							\tau=P(C)-P(D)=\frac{C}{N}-\frac{D}{N}=\frac{C-D}{N}
+							$$
+							where \(\mathcal{N}\) denotes total number of pairs,
+							\(\mathcal{C}\) the number of concordant pairs and
+							\(\mathcal{D}\) the number of discordant pairs
+						</p>
+						<p>
+								The exact pipeline looks like the following:
+								<ul>
+									<li>
+											For every recipe \(\mathbf{W}\) there are \(\mathbf{K}\) number of pictures. For each of these images feature vectors are extracted from a pre-trained Convolution Neural Network trained on 1000 categories in the ILSVRC 2014 image recognition competition with millions of images. The feature vectors form an internal representation of the image in the last fully connected layer before the 1000-category Softmax Layer, which was removed beforehand. These feature vectors are then dimensionally reduced by PCA (Principal Component Analysis) from an \(\mathbf{N} \times 4096\) matrix to an \(\mathbf{N} \times 512\) matrix, to reduce matrix size but still maintaining \(\sim 99 \%\) of information energy. As a result, one chooses the top 5 images with the smallest Euclidean distance to the input image (Approximate nearest neighbor), i.e. the top 5 optical, just from the picture information, similar pictures to the query image.
+									</li>
+								</ul>
+								<ul>
+									<li>
+											Furthermore, a CNN is trained with \(\mathbf{C}\) number of categories with pictures of \(\mathbf{W}\) recipes. \(\mathbf{C}\) has been determined dynamically using topic modeling and semantic analysis of recipe names. As a result we obtain for each category a probability to which the input image could belong.
+									</li>
+								</ul>
+								<ul>
+									<li>
+											The top-k categories from the CNN (2.) are compared with the categories from the top-k optically similar images (1.) with Kendall Tau correlation.
+									</li>
+								</ul>
+								The schema to visualize the method looks like this:
+						</p>
+						<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/max/800/1*LwnfkUFF5Z7ZVXc9NRUR7A.png" alt="" height="379" style="object-fit: cover; backgound-size: cover;">
+									</a>
+								</figure>
+						</div>
+
+						<h2>Individual Parts</h2>
+						<p>We will break this work up into smaller, more digestible chunks of information constisting of multiple parts:</p>
+						<code>
+						<ul class="ascii">
+							<li>Recognizing Food
+								<ul>
+								<li>Data preparation
+									<ul>
+									<li>Clearing data</li>
+									<li>Data augmentation</li>
+									</ul>
+								</li>
+								<li>Data analysis and visualization, split data(Train, Valid, Test)</li>
+								<li>Topic Modeling
+									<ul>
+									<li>Latent Dirichlet Allocation (LDA)</li>
+									<li>Non-negative Matrix Factorization</li>
+									</ul>
+								</li>                  
+								<li>Feature Extraction
+									<ul>
+									<li>k-nearest neighbors</li>
+									<li>t-SNE visualization</li>
+									</ul>
+								</li>
+								<li>Transfer Learning: Training pre-trained CNN (Convolutional Neural Network)
+									<ul>
+										<li>AlexNet, VGG, ResNet, GoogLeNet</li>
+									</ul>
+								</li>
+								<li>Deploying with Flask on now.sh, a serverless application deployment</li>
+								</ul>
+							</li>
+						</ul>
+						</code>
+						<p>
+							Each part contains Jupyter notebooks which you can view on the <a href="https://github.com/Murgio/Food-Recipe-CNN">Github page</a>.
+						</p>
+
+						<h2>Scraping and preparing the data</h2>
+						<p>In order to be able to train a model at all, you need enough data (so-called data augmentation and fine-tuning of pre-trained models
+							can be used as a remedy). Only because of this amount of data generalization of the training set can be continually increased to some
+							degree and high accuracy can be achieved in a test set. The first part of this tutorial deals with the data acquisition, analysis and
+							visualization of features and their relationships.</p>
+
+						<p class="has-text-color has-background has-very-dark-gray-color has-cyan-bluish-gray-color">
+								Shameless plug: I’m working on a python code editor which simplifies data analysis and data plotting. More information is available under: <a href="/products/lemon/">Lemon Code Editor</a>
+						</p>
+						<p>
+							<blockquote>We do not have better algorithms. We just have more data.</blockquote>
+							 Without exception, the quality and quantity of the data set is not negligible. That’s why Europe’s biggest cooking platform will be scraped: each recipe, finally 316'756 recipes (as of December 2017), are downloaded with a total of 879'620 images. It is important not to proceed too fast when downloading and to protect the servers with too many queries, since otherwise a ban of the own IP address would make the data collection more difficult.
+						</p>
+						<p>
+								More data leads to more dimensions, but more dimensions do not necessarily lead to a better model and its representation. Deviating patterns in the data set which disturb the learning can be unintentionally amplified by more dimensions, a generalization and learning of the data record is impaired for the neural network, the signal-to-noise ratio decreases.
+						</p>
+						<p>
+								All 300k recipes sorted by date: http://www.chefkoch.de/rs/s30o3/Rezepte.html
+						</p>
+						<p>
+							When doing website scrapping, it is important to respect the robots.txt file. Some administrators do not want visits from bots to specific directories. https://www.chefkoch.de/robots.txt provides:
+						</p>
+<script type="text/plain" class="language-markdown">User-agent: * # directed to all spiders, not just scooters
+Disallow: / cgi-bin
+Disallow: / stats
+Disallow: / pictures / photo albums /
+Disallow: / forumuploads /
+Disallow: / pictures / user /
+Disallow: / user /
+Disallow: / avatar /
+Disallow: / cms /
+Disallow: / products /
+Disallow: / how2videos /
+</script>
+						<p>
+							Listed are directories that do not interest us, so you can confidently continue. Nevertheless, measures such as random headers and enough big pauses between the individual requests are recommended to avoid a possible ban from the website (I learned this working on another project the hard way).
+						</p>
+<script type="text/plain" class="language-python"># Chefkoch.de Website
+CHEFKOCH_URL  = 'http://www.chefkoch.de'
+START_URL     = 'http://www.chefkoch.de/rs/s'
+CATEGORY      = '/Rezepte.html'
+category_url = START_URL + '0o3' + CATEGORY
+
+def _get_html(url):
+    page = ''
+    while page == '':
+        try:
+            page = requests.get(url, headers=random_headers())
+        except:
+            print('Connection refused')
+            time.sleep(10)
+            continue
+    return page.text
+
+def _get_total_pages(html):
+    soup = BeautifulSoup(html, 'lxml')
+    total_pages = soup.find('div', class_='ck-pagination qa-pagination').find('a', class_='qa-pagination-pagelink-last').text
+    return int(total_pages)
+
+html_text_total_pages = _get_html(category_url)
+total_pages = _get_total_pages(html_text_total_pages)
+print('Total pages: ', total_pages)
+</script>
+<code>Total pages:  10560</code>
+						<p>
+								A next important step is feature selection to disadvantage unimportant data. Preparing raw data for the neural net is commonplace in practice. In the first pass, the recipe name, the average application for the recipe, the number of ratings, the difficulty level, the preparation time and the publication date are downloaded. In the second pass, then the ingredient list, the recipe text, all images, and the number of times the recipe has been printed. With these features, the data record can be described very well and helps to gain a strong understanding of the data set, which is important to select the algorithms.
+						</p>
+						<p>
+								Data such as recipe name, rating, date from the upload of the recipe, etc. are stored in a csv file. If the recipe has an image, the thumbnail is placed in the search_thumbnails folder. We will make usage of multiprocessing to ensure shorter download time. For further information visit <a href="https://docs.python.org/3.4/library/multiprocessing.html?highlight=process">Python’s Documentation</a>.
+						</p>
+<script type="text/plain" class="language-python">
+def scrap_main(url):
+    print('Current url: ', url)
+    html = _get_html(url)
+    _get_front_page(html)
+    #sleep(randint(1, 2))
+start_time = time()
+with Pool(15) as p:
+    p.map(scrap_main, url_list)
+print("--- %s seconds ---" % (time() - start_time))
+</script>
+						<p>
+							Next we need to scrape the list of ingredients, the preparation, the tags and all images of each recipe.
+						</p>
+<script type="text/plain" class="language-python">
+def write_recipe_details(data):
+    dpath = DATAST_FOLDER + DFILE_NAME
+    with open(dpath, 'a', newline='') as f:
+        writer = csv.writer(f)
+        try:
+            writer.writerow((data['link'],
+                             data['ingredients'],
+                             data['zubereitung'],
+                             data['tags'],
+                             data['gedruckt:'],
+                             data['n_pics']
+                             #data['reviews'],
+                             #data['gespeichert:'],
+                             #data['Freischaltung:'],
+                             #data['author_registration_date'],
+                             #data['author_reviews']
+                            ))
+        except:
+            writer.writerow('')
+</script>
+						<p>
+							If everything went smoothly with the download, our data looks like this:
+						</p>
+						<code>
+						<ul class="ascii">
+							<li>Data
+								<ul>
+									<li>A total of 879'620 images (35 GB)</li>
+									<li>316'756 recipes
+										<ul>
+										<li>Of which 189'969 contain one or more pictures
+											<ul>
+												<li>Of which 107,052 recipes contain more than 2 images</li>
+											</ul>
+										</li>
+										<li>126'787 contain no picture</li>
+										</ul>
+									</li>
+								</ul>                 
+							</li>
+						</ul>
+						</code>
+						<h2>Data analysis and visualization</h2>
+						<p>
+							In order to get a first impression, we usually plot a heatmap to get first insights which possible features are interesting.
+						</p>
+						<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/max/1200/1*5MHpY-ztxpZbUmP0AB4oEw.png" alt="" max-height="379px" style="object-fit: contain; backgound-size: contain;">
+									</a
+									><figcaption>
+										The heatmap gives us insight which values correlate with other values.
+									</figcaption>
+								</figure>
+							</div>
+						<p>
+							The highest correlation have votes and average_rating. Figure 2 shows the pair plot on the 1st column, 2nd row, and it stands out that the higher the number of ratings, the better the rating of the recipe. Also interesting is the comparison between preparation time and number of ratings. Most reviews are based on recipes with short preparation time. It seems that the <mark>ChefKoch community prefers easy recipes</mark>. Another idea is to compare the number of newly uploaded recipes per year.
+						</p>
+						<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/max/1200/1*KqNsBQNKt88_PIFnuGs7gA.png" alt="" max-height="379px" style="object-fit: contain; backgound-size: contain;">
+									</a
+									><figcaption>
+											In the years 2008 to 2009, it has noticeably the most uploads per year. A quick search search on the internet shows that in 2008 the food price crisis had prevailed.
+									</figcaption>
+								</figure>
+							</div>
+						<p>
+							A comparison of the curves (bottom graphic ) shows that there was a <mark>direct correlation between the world’s rising prices and the supply of recipes</mark>. My hypothesis is that demand rose for recipes because one stayed at home and cooked for himself and his family in order to save budget and make ends meet as much as possible.
+						</p>
+						<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/max/1200/1*dG0shK7kLKmYiGxfnIp28Q.png" alt="" max-height="479px" style="object-fit: contain; backgound-size: contain;">
+									</a
+									><figcaption>
+											On the left the <a href="https://de.wikipedia.org/wiki/FAO_Food_Price_Index">index</a> and on the right the number of uploaded recipes per year.
+									</figcaption>
+								</figure>
+							</div>
+						<h3>Ingredients</h3>
+						<p>
+							Altogether 316'755 recipes share 3'248'846 ingredients. If you remove all ingredients that occur more than once, there are 63'588 unique ingredients. For the association analysis of the ingredients the APRIORI algorithm is used. This provides the frequency of what ingredients in combination with other ingredients occur in total how often.
+						</p>
+						<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/max/800/1*cRXpudMOLIwwqcwbAq45RQ.png" alt="" max-height="379px" style="object-fit: contain; backgound-size: contain;">
+									</a
+									><figcaption>
+											On the left are the top 8 and on the right the top 9–16 ingredients with the highest incidence.
+									</figcaption>
+								</figure>
+							</div>
+						<p>
+								Leader of the ingredients is salt with 60 percent representation in all recipes. In third place you can see the first tuple, the combination of two ingredients, namely pepper and salt with just over 40 percent they are by far the most common pair. The most common triplets, quadruplets and even quintuplets can be found in the <a href="https://github.com/Murgio/Food-Recipe-CNN/blob/master/03_02_zutaten_analysis_cloud.ipynb">corresponding Jupyter Notebook</a>.
+						</p>
+						<h2>Topic Modelling</h2>
+						<p>
+							The goal of this procedure is to <mark>divide all recipe names into n-categories</mark>. For a supervised classification problem, we have to provide the neural network with labeled images. It is only with these labels that learning becomes possible. The problem is that Chefkoch.de does not categorize their pictures. So we have to do this on our own. Possible procedures to split the 316'755 recipe names are shown below.
+						</p>
+						<p>
+							Take the following example:
+
+							<ul>
+								<li>Pizza with mushrooms</li>
+							</ul>
+							<ul>
+								<li>Stuffed peppers with peas and tuna</li>
+							</ul>
+							<ul>
+								<li>Pizza with seafood</li>
+							</ul>
+							<ul>
+								<li>Paprika with peas</li>
+							</ul>
+							The four recipe names above must be divided into n categories. Obviously, 1st and 3rd recipe need to be in the same category called pizza. The 2nd and 4th can also be divided into a new category due to the peas. But how do you manage more than 300 thousand recipe names?
+						</p>
+						<h3>Latent Dirichlet Allocation (LDA)</h3>
+						<p>
+							LDA is a probability model which assumes that each name can be assigned to a topic. First, the name body must be cleaned, i.e. stop words are removed and words are reduced to their root. The clean vocabulary serves as input.
+						</p>
+<script type="text/plain" class="language-python">
+de_stop = get_stop_words('german')
+s_stemmer = SnowballStemmer('german')
+tokenizer = RegexpTokenizer(r'\w+')
+final_names = []
+
+for recipe_name in twentyeigth_iter:
+    raw = recipe_name.lower()
+    tokens = tokenizer.tokenize(raw)
+    stop_t = [recipe_name for recipe_name in tokens if not recipe_name in de_stop and not recipe_name in filter_words_]
+    stem_t = [i for i in stop_t if len(i)>1]
+    if len(stem_t)==0: final_names.append(['error'])
+    else: final_names.append(stem_t)
+
+print('20 Cleaned Recipe names example: \n >>>')
+pprint(final_names[:20])
+20 Cleaned Recipe names example: 
+ >>>
+[['bratapfel', 'rotkohl'],
+ ['frühstückswolke'],
+ ['deichgrafensalat'],
+ ['geschichteter', 'kohl'],
+ ['rinderlendenragout'],
+ ['blaukraut'],
+ ['sauerbraten'],
+ ['punschtorte'],
+ ['oberländer'],
+ ['mcmoes', 'pasta'],
+ ['geschnetzeltes'],
+ ['ahorn', 'bacon', 'butter'],
+ ['endiviensalat'],
+ ['rote', 'linsen', 'gemüse'],
+ ['kotelett', 'gratin'],
+ ['rotkohl'],
+ ['remouladensauce'],
+ ['nudeln'],
+ ['kohlsuppe'],
+ ['gemüse', 'hackfleischauflauf']]
+</script>
+						<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/max/800/1*JIqd3yZP6yQNG5bl4RlRsQ.png" alt="" max-height="379px" style="object-fit: contain; backgound-size: contain;">
+									</a
+									><figcaption>
+											300 topics were set as condition. The model for Topic 89 provides good results: drinks are detected and summarized.
+									</figcaption>
+								</figure>
+							</div>
+						<p>
+							For the sake of simplicity, the exact mathematical definition is not discussed. As a result, we have a list of probabilities of how certain the model is that it would fit the topic. Example: ‘0.363 *’ scalloped ‘+ 0.165 *’ spicy ‘+ 0.124 *’ summer “+ 0.006 *” taboulé “+ 0.004 *” oatmeal biscuits “.
+
+							An interactive graph to browse through each of the 300 topics can be found at <a href="https://github.com/Murgio/Food-Recipe-CNN/blob/master/04_01_topic_modeling.ipynb">04_01_topic_modeling.ipynb</a> in the Github Repo.
+						</p>
+						<h3>Non-negative Matrix Factorization</h3>
+						<p>
+							The first step is to calculate the tf-idf (term frequency-inverse document frequency). This represents nothing more than <mark>the importance of a word in a recipe name, considering the importance in the whole text corpus</mark>. The four most important words are:
+							<ul><li>salad (2935.18)</li></ul>
+							<ul><li>spaghetti (2429.36)</li></ul>
+							<ul><li>torte (2196.21)</li></ul>
+							<ul><li>cake (1970.08)</li></ul>
+						</p>
+						<p>
+							The NMF algorithm takes as input the tf-idf and simultaneously performs dimension reduction and clustering. This effort provides excellent results as declared below for the first 4 topics:
+							<ul><li><strong>Topic #0:</strong> <br>spaghetti carbonara alla olio aglio al sabo puttanesca di mare</li></ul>
+							<ul><li><strong>Topic #1:</strong> <br>salad mixed corn melons chicoree bulgur radish celery quinoa </li></ul>
+							<ul><li><strong>Topic #2:</strong> <br>noodles chinese asia mie asian wok udon basil black light</li></ul>
+							<ul><li><strong>Topic #3:</strong> <br>muffins blueberry hazelnut cranberry savory juicy sprinkles johannisbeer oatmeal chocolate</li></ul>
+						</p>
+						<p>
+							The result can be visualized using t-SNE. It is important that a record with several dimensions is reduced to 2D, which allows to find a coordinate for each recipe name.
+						</p>
+							<div class="wp-block-image">
+									<figure class="kg-width-full">
+										<a>
+											<img src="https://cdn-images-1.medium.com/1*pOMs6vwmuBxHjMyjvHnNYg.png" alt="" width="100%" style="object-fit: cover; backgound-size: cover;">
+										</a
+										><figcaption>
+												Due to the complexity and associated calculation time of t-SNE, a subset of 50,000 was taken.
+										</figcaption>
+									</figure>
+								</div>
+						<h2>Feature Extraction</h2>
+						<p>
+							Decoupled from nature, neural networks work by reflecting the model of the human brain. The idea is that it learns from its mistakes, gradually adjusting the weights of the neuron to adapt to the data. With CNNs, the image information is first summarized to reduce the number of parameters. We assume that <mark>the first layers in a CNN recognize rough structures in the picture. The further you proceed to the last Softmax layer, the finer the learned features become.</mark> We can take advantage of this and takes pre-trained CNNs which have been trained with millions of pictures and remove the last layers to train them with our own data. This saves us millions of parameters and thus reduces computing time. The CNN chosen here is the VGG-16 which was trained in a classification competition 2014 on 1000 categories.
+						</p>
+						<p>
+							If you remove the last layer, we get a feature extractor of the second-to-last layer. This forms a n x 4096 matrix, where n is the number of input pictures.
+						</p>
+<script type="text/plain" class="language-python">
+features = []
+for image_path in tqdm(images):
+    img, x = get_image(image_path);
+    feat = feat_extractor.predict(x)[0]
+    features.append(feat)
+</script>
+						<p>
+							We let the VGG-16 calculate the vector for every image we have. This vector is, so to speak, the fingerprint of the picture: an internal representation the neural network builds.
+						</p>
+						<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/max/800/1*7ef7Dfupq4oFbG4q5V2NyA.png" alt="" max-height="379px" style="object-fit: contain; backgound-size: contain;">
+									</a
+									><figcaption>
+											VGG representation calculated from an image query.
+									</figcaption>
+								</figure>
+							</div>
+							<p>
+								Now all we have to do is for every new given input image pass it through the VGG-16, get the fingerprint vector and calculate the nearest neighbors with approximate nearest neighbor search. The library I will use for this is FALCONN. FALCONN is a library with algorithms for the nearest neighbor search problem. The algorithms in FALCONN are based on Locality-Sensitive Hashing (LSH), which is a popular class of methods for nearest neighbor search in high-dimensional spaces. The goal of FALCONN is to provide very efficient and well-tested implementations of LSH-based data structures.
+							</p>
+							<p>
+								Currently, FALCONN supports two LSH families for the cosine similarity: hyperplane LSH and cross polytope LSH. Both hash families are implemented with multi-probe LSH in order to minimize memory usage. Moreover, FALCONN is optimized for both dense and sparse data. Despite being designed for the cosine similarity, FALCONN can often be used for nearest neighbor search under the Euclidean distance or a maximum inner product search.
+							</p>
+							<p>
+								We conduct an experiment by passing an input image of a brownie into our system and examine the output.
+							</p>
+							<div class="wp-block-image">
+									<figure class="aligncenter">
+										<a>
+											<img src="https://cdn-images-1.medium.com/max/600/1*rwVX75TezhElhqtOAhxFGw.png" alt="" max-height="209px" style="object-fit: contain; backgound-size: contain;">
+										</a>
+									</figure>
+								</div>
+								<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/max/600/1*0AP8X0aMlpjbILLMwNRlng.png" alt="" max-height="229px" style="object-fit: contain; backgound-size: contain;">
+									</a
+									><figcaption>
+											For further information visit <a href="https://github.com/Murgio/Food-Recipe-CNN/blob/master/06_04_cnn_feature_extraction_VGG16.ipynb">the corresponding Jupyter Notebook</a>
+									</figcaption>
+								</figure>
+							</div>
+						<p>
+							As expected we get related food images to our query image.
+
+							We can even create a grid of images to view the interpretation of the neural network. The following picture is only a small part of the whole image. You can see cooking dishes that have similar features are closer together. The whole grid can be found <a href="https://github.com/Murgio/Food-Recipe-CNN/blob/master/output/tsne/20000-tSNE-grid-recipes.jpg">here</a>
+						</p>
+						<div class="wp-block-image">
+								<figure class="aligncenter">
+									<a>
+										<img src="https://cdn-images-1.medium.com/1*z7GF7kDWLJMwHlH2_RDaFQ.png" alt="" max-height="379px" style="object-fit: contain; backgound-size: contain;">
+									</a
+									><figcaption>
+											Similar cooking dishes are close to each other
+									</figcaption>
+								</figure>
+							</div>
+						<p>
+								That’s a wrap for this tutorial! How to train your own neural network from scratch without pre-training and turning our system into a web application with Flask (Part V and Part VI), will be up in the next tutorial.
+						</p>
+
+						<div class="align-middle">
+								<div class="section-divider">
+									<hr class="section-divider">
+								</div>
+								<div class="section-content align-items-center">
+									<div class="section-inner sectionLayout--insetColumn">
+										<figure class="graf graf--figure graf--iframe graf--leading graf--trailing">
+											<blockquote class="twitter-tweet">
+												<a href="https://twitter.com/kaggle/status/1038095899912753152"></a>
+											</blockquote>
+											<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+											<figcaption>Thanks to Kaggle for letting the world know about my project.</figcaption>
+										</figure>
+									</div>
+								</div>
+							</div>
+					</article>
+				</div>
+			</div>
+		</div>
+		<div class="container pt-4 pb-4">
+			<h5 class="font-weight-bold spanborder"><span>Read next</span></h5>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="card border-0 mb-4 box-shadow h-xl-300">
+						<div
+							style="background-image: url(/blog/assets/img/demo/01.gif); height: 150px; background-size: cover; background-repeat: no-repeat; background-position-y: center;">
+						</div>
+						<div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+							<h2 class="h4 font-weight-bold">
+								<a class="text-dark" href="/blog/conv-model-tf">Convolutional Models in TensorFlow</a>
+							</h2>
+							<p class="card-text">
+								Gain an intuition about convolutions and understand
+								different steps used in convolutional neural network architectures.
+							</p>
+							<div>
+								<small class="text-muted">Jun 16 &middot; 8 min read</small>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="flex-md-row mb-4 box-shadow h-xl-300">
-					<div class="mb-3 d-flex align-items-center">
-						<img height="80" src="/blog/assets/img/demo/blog4.jpg">
-						<div class="pl-3">
-							<h2 class="mb-2 h6 font-weight-bold">
-							<a class="text-dark" href="./article.html">Nasa's IceSat space laser makes height maps of Earth</a>
-							</h2>
-							<div class="card-text text-muted small">
-								 Jake Bittle in LOVE/HATE
+				<div class="col-lg-6">
+					<div class="flex-md-row mb-4 box-shadow h-xl-300">
+						<div class="mb-3 d-flex align-items-center">
+							<img height="80" src="/blog/assets/img/demo/02.gif">
+							<div class="pl-3">
+								<h2 class="mb-2 h6 font-weight-bold">
+									<a class="text-dark" href="/blog/gan-in-tensorflow">Generative Adversarial Networks (GAN) in TensorFlow</a>
+								</h2>
+								<div class="card-text text-muted small">
+									Muriz Serifovic in TENSORFLOW
+								</div>
+								<small class="text-muted">Feb 20 2019 &middot; 9 min read</small>
 							</div>
-							<small class="text-muted">Dec 12 · 5 min read</small>
 						</div>
-					</div>
-					<div class="mb-3 d-flex align-items-center">
-						<img height="80" src="/blog/assets/img/demo/blog5.jpg">
-						<div class="pl-3">
-							<h2 class="mb-2 h6 font-weight-bold">
-							<a class="text-dark" href="./article.html">Underwater museum brings hope to Lake Titicaca</a>
-							</h2>
-							<div class="card-text text-muted small">
-								 Jake Bittle in LOVE/HATE
+						<div class="mb-3 d-flex align-items-center">
+							<img height="80" src="/blog/assets/img/demo/attention.png">
+							<div class="pl-3">
+								<h2 class="mb-2 h6 font-weight-bold">
+									<a class="text-dark" href="/blog/music-transformer">The Transformer: Attention Is All You Need</a>
+								</h2>
+								<div class="card-text text-muted small">
+									Muriz Serifovic in TENSORFLOW
+								</div>
+								<small class="text-muted">Jun 01 2019 &middot; 11 min read</small>
 							</div>
-							<small class="text-muted">Dec 12 · 5 min read</small>
 						</div>
-					</div>
-					<div class="mb-3 d-flex align-items-center">
-						<img height="80" src="/blog/assets/img/demo/blog6.jpg">
-						<div class="pl-3">
-							<h2 class="mb-2 h6 font-weight-bold">
-							<a class="text-dark" href="./article.html">Sun-skimming probe starts calling home</a>
-							</h2>
-							<div class="card-text text-muted small">
-								 Jake Bittle in LOVE/HATE
+						<div class="mb-3 d-flex align-items-center">
+							<img height="80" src="/blog/assets/img/demo/04.jpg">
+							<div class="pl-3">
+								<h2 class="mb-2 h6 font-weight-bold">
+									<a class="text-dark" href="/blog/speed-up-jupyter-notebooks">Optimization Tricks for Jupyter Notebooks</a>
+								</h2>
+								<div class="card-text text-muted small">
+									Muriz Serifovic in PYTHON
+								</div>
+								<small class="text-muted">Jan 01 2019 &middot; 11 min read</small>
 							</div>
-							<small class="text-muted">Dec 12 · 5 min read</small>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- End Main -->
-		
+		<!-- End Main -->
+
 		<!--------------------------------------
 	FOOTER
 	--------------------------------------->
-	<div class="container mt-5">
+		<div class="container mt-5">
 			<footer class="bg-white border-top p-3 text-muted small">
 				<div class="row align-items-center justify-content-between">
 					<div>
@@ -204,15 +709,41 @@ HEADER
 			</footer>
 		</div>
 		<!-- End Footer -->
-		
-	<!--------------------------------------
+
+		<!--------------------------------------
 	JAVASCRIPTS
 	--------------------------------------->
-	<script src="/blog/assets/js/vendor/jquery.min.js" type="text/javascript"></script>
-	<script src="/blog/assets/js/vendor/popper.min.js" type="text/javascript"></script>
-	<script src="/blog/assets/js/vendor/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/blog/assets/js/functions.js" type="text/javascript"></script>
-	<!-- Tooltips -->
-	<script> $(function () { $('[data-toggle="tooltip"]').tooltip() }) </script>
-	</body>
-	</html>
+		<script src="/blog/assets/js/vendor/jquery.min.js" type="text/javascript"></script>
+		<script src="/blog/assets/js/vendor/popper.min.js" type="text/javascript"></script>
+		<script src="/blog/assets/js/vendor/bootstrap.min.js" type="text/javascript"></script>
+		<script src="/blog/assets/js/functions.js" type="text/javascript"></script>
+		<script src="/blog/assets/js/vendor/prism.js" type="text/javascript"></script>
+		<!-- Popovers -->    
+		<script> 
+			$(function () {
+				$('[data-toggle="popover"]').popover()
+			})
+			$('.popover-dismiss').popover({
+				trigger: 'focus'
+			})
+		</script>
+
+		<script>
+				$(function() {
+				  new ClipboardJS('.btn');
+				  var navSelector = '#toc';
+				  var $myNav = $(navSelector);
+				  Toc.init({
+					  $nav: $('#toc'),
+					  $scope: $('#docsarea')
+					});
+				  $('body').scrollspy({
+					target: navSelector
+				  });        
+				});
+			</script>
+		<!--Write in Latex-->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</body>
+
+</html>
