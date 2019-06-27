@@ -71,6 +71,11 @@ NAVBAR
 					</li>
 				</ul>
 			</div>
+			<progress id="reading-progress" class="progress" value="0">
+				<div class="progress-container">
+					<span class="progress-bar"></span>
+				</div>
+			</progress>
 		</div>
 	</nav>
 	<!-- End Navbar -->
@@ -728,15 +733,57 @@ for image_path in tqdm(images):
 			})
 		</script>
 
+		<!--Reading Progress Bar-->
+<script>
+	$(document).ready(function () {
+			
+		var progressBar = document.querySelector('#reading-progress');
+	
+		var lastScrollY = window.scrollY;
+		var lastWindowHeight = window.innerHeight;
+		var lastDocumentHeight = $(document).height();
+		var ticking = false;
+	
+		function onScroll() {
+			lastScrollY = window.scrollY;
+			requestTick();
+		}
+	
+		function onResize() {
+			lastWindowHeight = window.innerHeight;
+			lastDocumentHeight = $(document).height();
+			requestTick();
+		}
+	
+		function requestTick() {
+			if (!ticking) {
+				requestAnimationFrame(update);
+			}
+			ticking = true;
+		}
+	
+		function update() {
+			var progressMax = lastDocumentHeight - lastWindowHeight;
+	
+			progressBar.setAttribute('max', progressMax);
+			progressBar.setAttribute('value', lastScrollY);
+	
+			ticking = false;
+		}
+	
+		window.addEventListener('scroll', onScroll, {passive: true});
+		window.addEventListener('resize', onResize, false);
+	
+		update();
+	
+	});
+</script>
+
 		<script>
 				$(function() {
 				  new ClipboardJS('.btn');
 				  var navSelector = '#toc';
 				  var $myNav = $(navSelector);
-				  Toc.init({
-					  $nav: $('#toc'),
-					  $scope: $('#docsarea')
-					});
 				  $('body').scrollspy({
 					target: navSelector
 				  });        
