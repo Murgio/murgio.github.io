@@ -2864,28 +2864,65 @@ body {
 a {
  	color: #396;
 	}
+	
 a.deepchef {
+	background:
+		linear-gradient(to bottom, #E37B66 0%,
+		#E37B66 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 4px 4px;
 	color: #54514d;
-	border-bottom: 2px solid #E37B66;
+	text-decoration: none;
+	transition: background-size .2s;
 }
+
 a.lemon {
+	background:
+		linear-gradient(to bottom, #fee050 0%,
+		#fee050 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 4px 4px;
 	color: #54514d;
-	border-bottom: 2px solid #fee050;
+	text-decoration: none;
+	transition: background-size .2s;
 }
 a.sirlexa {
+	background:
+		linear-gradient(to bottom, #205c9a 0%,
+		#205c9a 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 4px 4px;
 	color: #54514d;
-	border-bottom: 2px solid #205c9a;
+	text-decoration: none;
+	transition: background-size .2s;
 }
 a.sharead {
+	background:
+		linear-gradient(to bottom, #71559a 0%,
+		#71559a 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 4px 4px;
 	color: #54514d;
-	border-bottom: 2px solid #71559a;
+	text-decoration: none;
+	transition: background-size .2s;
 }
 a.research {
 	color: #54514d;
 }
 a.ha-index {
+	background:
+		linear-gradient(to bottom, #00A572 0%,
+		#00A572 100%);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 4px 4px;
 	color: #54514d;
-	border-bottom: 2px solid #00A572;
+	text-decoration: none;
+	transition: background-size .2s;
 }
 
 a.deepchef-mobile {
@@ -2930,16 +2967,16 @@ a.ha-index-mobile:hover {
 }
 
 a.deepchef:hover {
-	color: #E37B66;
+	background-size: 4px 50px;
 }
 a.lemon:hover {
-	color: #E5C737;
+	background-size: 4px 50px;
 }
 a.sirlexa:hover {
-	color: #205c9a;
+	background-size: 4px 50px;
 }
 a.sharead:hover {
-	color: #71559a;
+	background-size: 4px 50px;
 }
 
 a.research:hover {
@@ -2949,15 +2986,15 @@ a.research:focus {
 	color: #837b74;
 }
 a.ha-index:hover {
-	color: #00A572;
+	background-size: 4px 50px;
 }
 
 a:hover {
  	color: #000;
 	}
-a:focus {
+/* a:focus {
 		color: #bcb1a7;
-}
+} */
 
 /* Text Selection */
 ::selection {
