@@ -70,7 +70,7 @@
       <p style="padding: 10px 0 5px;">
         Author of
         <a href="https://github.com/Murgio/Food-Recipe-CNN" class="deepchef" target="_blank">DeepChef</a>,
-        <a href="/products/lemon/" class="lemon" target="_blank">Lemon Editor</a> and
+        <a href="/products/lemon/" class="lemon" target="_blank">Lemon Code Editor</a> and
         <a href="https://github.com/Murgio/TextRank-Machine-Learning" class="sharead" target="_blank">Sharead</a>.
         <!--<a href="https://medium.com/@Muriz.Serifovic/how-to-write-your-very-first-powerful-artificial-intelligence-s-440895442c03" class="sirlexa" target="_blank">Sirlexa</a>-->
       </p>
@@ -167,22 +167,46 @@
         <h2 class="entry-title-blog">research work.</h2>
       </header>
       <section class="cards-wrapper-blog-research">
+          <div class="card-grid-space">
+              <a class="research">
+                <div>
+                  <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Punctuation Restoration in Unsegmented Text with Deep Convolutional Neural Networks</h2>
+                  <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.2em !important; margin-bottom: 1.2em !important;">
+                      In this work we suggest an approach to predict marks of punctuation for unsegmented text corpora. A Deep Convolutional Neural Network (DCNN) model is implemented to determine if a punctuation mark should be inserted in a word window of lenght 30.
+                      The goal is to find the optimal weights \(W\) and biases \(b\) within cost function \(C\):
+                      $$ \underset{W, b}{\arg \min } C=\frac{1}{2 N} \sum_{i=1}^{N}\left\|\hat{Y}_{i}-Y_{i}\right\|^{2}+\frac{\lambda}{2} \sum_{l=1}^{L-1}\left\|W_{l}\right\|_{F}^{2}$$
+
+                      We empirically show the effectiveness of our proposed architecture outperforming previous state-of-the-art solutions.
+                  </p>
+                  <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.2em !important; margin-bottom: 1.2em !important;">
+                  </p>
+                  <div class="tags-blog">
+                    <div class="tag-blog">Natural Language Processing, 2019</div>
+                    <div class="tag-blog">Paper</div>
+                  </div>
+                </div>
+              </a>
+            </div>
         <div class="card-grid-space">
           <a class="research" href="https://github.com/Murgio/TextRank-Machine-Learning" target="_blank">
             <div>
-              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Unsupervised Graph-Based Ranking Model for Tech Talk Summarization</h2>
-              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.2em !important; margin-bottom: 1.2em !important;">An unsupervised text-oriented ranking method for sentence extraction by Mihalcea et al. [2004] applied on YouTube subtitles for tech talk summarization.
-                We show that by using cosine distance, given by $$
-                D\left(x_{1}, x_{2}\right)=1-\frac{f\left(x_{1}\right) \cdot f\left(x_{2}\right)}{\left\|f\left(x_{1}\right)\right\| \times\left\|f\left(x_{2}\right)\right\|}
-                $$
-                to calculate sentence similarities on word vectors obtained by an unsupervised learning algorithm, we can highlight the most representative passages in tech talks published on YouTube.
-              </p>
-              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.2em !important; margin-bottom: 1.2em !important;">
+              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Predicting Most Important Passages in YouTube Tech Talks with Unsupervised Graph-Based Ranking Models</h2>
+              <div style="float: right; margin-left: 1.9em; text-align: center">
+                <img src="images/home/yt-z-score.jpg" style="width:413px; margin-top:6px;border-radius:0.4em;">
+                <div style="font-size: 90%; text-align: center; max-width:463px">Visualizing importance predictions (colored in red) which were smoothened by Weierstrass Transform.</div>
+              </div>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.2em !important; margin-bottom: 1.2em !important;">Word Embeddings (WE) have recently imposed themselves as a standard for representing word meaning in NLP. In this work, we propose the unsupervised application
+                  of graph-based ranking models to video speech captions, building a graph that interconnects words represented by GloVe embeddings. For a sentence \(V_{i}\), the weighted rank is defined as:
+                  $$
+                  W S\left(V_{i}\right)=(1-d)+d * \sum_{V_{j} \in I n\left(V_{i}\right)} \frac{w_{j i}}{\sum_{V_{k} \in O u t\left(V_{j}\right)} w_{j k}} W S\left(V_{j}\right)
+                  $$
+                  <br>
+                  <!-- <br clear="all"> -->
               </p>
               <div class="tags-blog">
-                <div class="tag-blog">Machine Learning, 2019</div>
+                <div class="tag-blog">Natural Language Processing, 2019</div>
                 <div class="tag-blog">GitHub</div>
-                <div class="tag-blog-hot"><i class="pw-icon-eye-outline"></i> 201 visits / month</div>
+                <div class="tag-blog-hot"><i class="pw-icon-eye-outline"></i> 301 visits / month</div>
               </div>
             </div>
           </a>
@@ -210,7 +234,7 @@
               <div class="tags-blog">
                 <div class="tag-blog">Machine Learning, 2018</div>
                 <div class="tag-blog">GitHub</div>
-                <div class="tag-blog-hottest"><i class="pw-icon-eye-outline"></i> 1'473 visits / month</div>
+                <div class="tag-blog-hottest"><i class="pw-icon-eye-outline"></i> 1'613 visits / month</div>
               </div>
             </div>
           </a>
@@ -245,7 +269,7 @@
               <div class="tags-blog">
                 <div class="tag-blog">Image Processing, 2016</div>
                 <div class="tag-blog">GitHub</div>
-                <div class="tag-blog-hotter"><i class="pw-icon-eye-outline"></i> 869 visits / month</div>
+                <div class="tag-blog-hotter"><i class="pw-icon-eye-outline"></i> 874 visits / month</div>
               </div>
             </div>
           </a>
@@ -307,7 +331,7 @@
             <p style="padding: 10px 0 5px;">
               Author of
               <a href="https://github.com/Murgio/Food-Recipe-CNN" class="deepchef-mobile" target="_blank">DeepChef</a>,
-              <a href="/products/lemon/" class="lemon-mobile" target="_blank">Lemon Editor</a> and
+              <a href="/products/lemon/" class="lemon-mobile" target="_blank">Lemon Code Editor</a> and
               <a href="https://github.com/Murgio/TextRank-Machine-Learning" class="sharead-mobile"
                 target="_blank">Sharead</a>.
               <!--<a href="https://medium.com/@Muriz.Serifovic/how-to-write-your-very-first-powerful-artificial-intelligence-s-440895442c03" class="sirlexa" target="_blank">Sirlexa</a>-->
