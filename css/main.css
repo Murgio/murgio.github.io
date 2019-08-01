@@ -2998,10 +2998,10 @@ a:hover {
 
 /* Text Selection */
 ::selection {
- 	text-shadow: none; color: #333; background: #FFFFCF;
+ 	text-shadow: none; color: #333; background: #f6dcb9;
 	}
 ::-moz-selection {
- 	text-shadow: none; color: #333; background: #FFFFCF;
+ 	text-shadow: none; color: #333; background: #f6dcb9;
 	}
 	
 /* COLORS
