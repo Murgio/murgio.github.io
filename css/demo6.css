@@ -5,7 +5,8 @@
 
 
 body {
- 	color: #54514d;
+	color: #54514d;
+	background-color: #faf6f1;
  }
 h1, .entry-title {
 	font-family: 'Playfair Display', serif;
