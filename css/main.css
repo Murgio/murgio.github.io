@@ -681,8 +681,8 @@ textarea,
 	justify-content: center;
 	align-items: center;
 	grid-template-columns: 1fr;
-	grid-gap: 2rem;
-	padding-top: 1em;
+	grid-gap: 3rem;
+	padding-top: 0em;
 	padding-bottom: 4rem;
 	width: max-content;
   }
