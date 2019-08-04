@@ -1,4 +1,6 @@
-
+:root {
+  --card-shadow: #ebe7e2;
+}
 
 
 /* -------------------------------- 
@@ -34,7 +36,7 @@ Main components
 .no-csstransforms3d .card {
   	float: right;
 	}
-.no-csstransforms3d .card::before {
+.no-csstransforms3d .shadowcard {
   	display: none;
 	}
 .card-3d-right-side, 
@@ -197,7 +199,7 @@ Main components
     -o-transform: rotateX(-58deg) rotateZ(-40deg) translateX(60px) translateY(290px);
     transform: rotateX(-58deg) rotateZ(-40deg) translateX(60px) translateY(290px);
   }
-  .card::before {
+  .shadowcard {
     /* mockup shadow */
     display: block;
     content: '';
@@ -206,16 +208,13 @@ Main components
     left: 0;
     width: 97%;
     height: 99%;
-	
-    background: #ebe7e2;
-	box-shadow: 0 0 30px 20px #ebe7e2;
-	
+
     -webkit-transform-origin: center top;
     -moz-transform-origin: center top;
     -ms-transform-origin: center top;
     -o-transform-origin: center top;
     transform-origin: center top;
-	
+
     -webkit-transform: translateZ(-300px) translateX(-87%) translateY(570px);
     -moz-transform: translateZ(-300px) translateX(-87%) translateY(570px);
     -ms-transform: translateZ(-300px) translateX(-87%) translateY(570px);
@@ -223,7 +222,14 @@ Main components
     transform: translateZ(-300px) translateX(-87%) translateY(570px);
     -webkit-transition: -webkit-transform 0.6s;
     -moz-transition: -moz-transform 0.6s;
-    transition: transform 0.6s;
+	
+    background: #ebe7e2;
+    box-shadow: 0 0 30px 20px #ebe7e2;
+    -webkit-transition: background-color .5s ease .25s, box-shadow .5s ease .25s, transform 0.6s;
+    -moz-transition: background-color .5s ease .25s, box-shadow .5s ease .25s, transform 0.6s;
+    -ms-transition: background-color .5s ease .25s, box-shadow .5s ease .25s, transform 0.6s;
+    -o-transition: background-color .5s ease .25s, box-shadow .5s ease .25s, transform 0.6s;
+    transition: background-color .5s ease .25s, box-shadow .5s ease .25s, transform 0.6s;
   }
   .is-card-open .card {
     -webkit-transform: translateX(0);
@@ -233,7 +239,7 @@ Main components
     transform: translateX(0);
 	Z-index: 100;
   }
-  .is-card-open .card::before {
+  .is-card-open .shadowcard {
 	  /*width: 97%; height: 99%;*/
     -webkit-transform: translateZ(-580px) translateX(10px) translateY(10px);
     -moz-transform: translateZ(-580px) translateX(10px) translateY(10px);
@@ -358,7 +364,7 @@ Main components
     -webkit-backface-visibility: visible;
      backface-visibility: visible; 
 	}
-  .card::before {
+  .shadowcard {
     transform: translateZ(-300px) translateX(-18%) translateY(170px)
   }
 }

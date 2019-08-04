@@ -6,7 +6,6 @@ body {
 	--color-content-link: #000;
 	--color-content-link-hover: #000;
 	--color-heading: #d1cfcf;
-	--font-content: Cardo;
 }
 
 .frame {
@@ -82,6 +81,8 @@ body {
 	position: absolute;
 	pointer-events: none;
 	will-change: transform;
+	z-index: 998;
+	display: none;
 }
 
 .distort__img {
@@ -131,14 +132,14 @@ body {
 .menu__link,
 .quote__link {
 	z-index: 999;
-	color: var(--color-content-link);
+	color: #FFF;
 	position: relative;
 	white-space: nowrap;
 }
 
 .menu__link:hover,
 .quote__link:hover {
-	color: var(--color-content-link-hover);
+	color: #FFF;
 }
 
 .menu__link span,
@@ -154,12 +155,12 @@ body {
 	border-style: solid;
 	width: 100%;
 	left: 0;
-	top: calc(100% - 0.25rem);
+	top: calc(100% + 0.1rem);
 	border-color: currentColor;
 }
 
 
-@media screen and (min-width: 53em) {
+@media screen and (min-width: 992px) {
 	.frame {
 		position: fixed;
 		text-align: left;
@@ -218,7 +219,13 @@ body {
 	.quote__author {
 		font-size: 2.5vh;
 	}
+	.quote__link {
+		color: var(--color-content-link, #000);
+	}
+	.quote__link:hover {
+		color: var(--color-content-link-hover, #000);
+	}
 	.quote__link::after {
-		top: calc(100% - 1vh);
+		top: calc(100% + 0.2vh);
 	}
 }

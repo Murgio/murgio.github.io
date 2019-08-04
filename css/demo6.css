@@ -7,6 +7,12 @@
 body {
 	color: #54514d;
 	background-color: #faf6f1;
+	-webkit-transition: background-color 0.5s ease;
+	-moz-transition: background-color 0.5s ease;
+	-ms-transition: background-color 0.5s ease;
+	-o-transition: background-color 0.5s ease;
+	transition: background-color 0.5s ease;
+	transition-delay: 0.25s;
  }
 h1, .entry-title {
 	font-family: 'Playfair Display', serif;
@@ -331,7 +337,11 @@ h1,
   }
 	
 /* Card Image Mask Color */
-.cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #717154; }
+.cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #181a1e; opacity: .2;}
+
+@media screen and (max-width: 991px) {
+	.cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #181a1e; opacity: .60;}
+}
 
 
 /* PRIMARY COLOR */

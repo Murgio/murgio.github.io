@@ -131,7 +131,7 @@ p {
 	}
 h1,
 .entry-title {
-	font-weight: 600; word-wrap: break-word;
+	font-weight: 600; word-wrap: break-word; font-family: Playfair Display, serif;
 	}
 /* blockquote  */
 blockquote {
@@ -538,7 +538,7 @@ textarea,
 .card-3d-right-side:after,
 .card-3d-bottom-side:after,
 .header:before {
-	content: ""; position: absolute; z-index: 5; top: 0; left: 0; right: 0; bottom: 0; background: #0d3d6d; opacity: .0;
+	content: ""; position: absolute; z-index: 5; top: 0; left: 0; right: 0; bottom: 0; background: #0d3d6d; opacity: .4;
 	}
 
 
@@ -676,7 +676,7 @@ textarea,
 	align-items: center;
 	grid-template-columns: 1fr;
 	grid-gap: 3rem;
-	padding-top: 0em;
+	padding-top: 1em;
 	padding-bottom: 4rem;
 	width: max-content;
   }
