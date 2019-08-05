@@ -87,6 +87,8 @@ body {
 
 .distort__img {
 	opacity: 0;
+	image-rendering: optimizeSpeed;
+	shape-rendering: optimizeSpeed;
 }
 
 .content {
@@ -227,5 +229,9 @@ body {
 	}
 	.quote__link::after {
 		top: calc(100% + 0.2vh);
+	}
+	.distort__img {
+		image-rendering: optimizeSpeed;
+		shape-rendering: optimizeSpeed;
 	}
 }
