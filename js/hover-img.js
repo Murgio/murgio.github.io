@@ -90,7 +90,7 @@
 					document.getElementById('shadowcard').style.boxShadow = "0 0 30px 20px " + colors[this.current][1];
                 };
                 const mouseleaveFn = () => {
-					TweenMax.to(this.DOM.imgs[this.current], 0.5, {ease: Quad.easeOut, opacity: 0});
+					TweenMax.to(this.DOM.imgs[this.current], 0.2, {ease: Quad.easeOut, opacity: 0});
                     document.body.style.backgroundColor = "#faf6f1";
                     //document.documentElement.style.setProperty('--card-shadow', "#ebe7e2");
 					document.getElementById('shadowcard').style.backgroundColor = "#ebe7e2";
@@ -102,20 +102,20 @@
         }
         render() {
             // Translate the image on mousemove
-            this.lastMousePos.translation.x = lerp(this.lastMousePos.translation.x, this.mousePos.x, 0.1);
-            this.lastMousePos.translation.y = lerp(this.lastMousePos.translation.y, this.mousePos.y, 0.1);
+            this.lastMousePos.translation.x = lerp(this.lastMousePos.translation.x, this.mousePos.x, 0.4);
+            this.lastMousePos.translation.y = lerp(this.lastMousePos.translation.y, this.mousePos.y, 0.4);
             // clip to window boundaries
             const amountx = this.lastMousePos.translation.x - winsize.width / 2;
             const amounty = this.lastMousePos.translation.y - winsize.height / 2;
             this.DOM.svg.style.transform = `translateX(${amountx}px) translateY(${amounty}px)`;
             
             // Scale goes from 0 to 50 for mouseDistance values between 0 to 140
-            this.lastMousePos.displacement.x = lerp(this.lastMousePos.displacement.x, this.mousePos.x, 0.08);
-            this.lastMousePos.displacement.y = lerp(this.lastMousePos.displacement.y, this.mousePos.y, 0.08);
+            this.lastMousePos.displacement.x = lerp(this.lastMousePos.displacement.x, this.mousePos.x, 0.4);
+            this.lastMousePos.displacement.y = lerp(this.lastMousePos.displacement.y, this.mousePos.y, 0.4);
             const mouseDistance = distance(this.lastMousePos.displacement.x, this.mousePos.x, this.lastMousePos.displacement.y, this.mousePos.y);
             // Might be too slow -> too many calculations
-            //this.dmScale = Math.min(lineEq(50, 0, 140, 0, mouseDistance), 140);
-            this.dmScale = Math.min(mouseDistance, 100);
+            // this.dmScale = Math.min(lineEq(50, 0, 140, 0, mouseDistance), 50);
+            this.dmScale = Math.min(mouseDistance, 50);
             feDisplacementMapEl.scale.baseVal = this.dmScale;
 
             requestAnimationFrame(() => this.render());
