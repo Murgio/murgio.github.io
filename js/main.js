@@ -75,6 +75,13 @@
 				  $('.one-page-layout .cover-media').height($(window).height()); 
 				});
 			}
+			else {
+				// Don't load unused GIFs on mobile.
+				const gifs = ["images/home/deepchef.gif", "images/home/lemon.gif", "images/home/sharead.gif"]
+				$('.distort__img').each(function(i, val) {
+					$(this).attr("href", gifs[i]);
+				});
+			}
 
 			
 			// show card
