@@ -11,7 +11,7 @@
 
     sr.reveal('.hero-title, .hero-paragraph, .newsletter-header, .newsletter-form', {
       duration: 1000,
-      distance: '40px',
+      distance: '20px',
       easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',
       origin: 'bottom',
       interval: 150
@@ -25,8 +25,8 @@
     })
 
     sr.reveal('.feature', {
-      duration: 600,
-      distance: '40px',
+      duration: 200,
+      distance: '20px',
       easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',
       interval: 100,
       origin: 'bottom',

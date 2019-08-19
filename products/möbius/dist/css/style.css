@@ -14,7 +14,7 @@ body {
 	margin: 0;
 	--color-bg: #1b1c1c;
 	--color-text: #ddd;
-	--color-text-subtle: #fee050;
+	--color-text-subtle: #ddd;
 }
 
 article, aside, footer, header, nav, section {
@@ -270,7 +270,7 @@ hr {
 	border: 0;
 	display: block;
 	height: 1px;
-	background: #E3E7EB;
+	background: #f5eded;
 	background: linear-gradient(to right, rgba(227, 231, 235, 0.1) 0, rgba(227, 231, 235, 0.6) 50%, rgba(227, 231, 235, 0.1) 100%);
 	margin-top: 24px;
 	margin-bottom: 24px
@@ -335,7 +335,7 @@ table {
 }
 
 tr {
-	border-bottom: 1px solid #E3E7EB
+	border-bottom: 1px solid #f5eded
 }
 
 th {
@@ -375,6 +375,9 @@ body {
 body, button, input, select, textarea {
 	font-family: "Lato", sans-serif
 }
+input, select, textarea{
+    color: #ff0000;
+}
 
 a {
 	color: inherit;
@@ -399,14 +402,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 h1, .h1 {
-	font-size: 36px;
+	font-size: 42px;
 	line-height: 46px;
 	letter-spacing: -0.2px
 }
 
 @media (min-width: 641px) {
 	h1, .h1 {
-		font-size: 42px;
+		font-size: 58px;
 		line-height: 52px;
 		letter-spacing: -0.1px
 	}
@@ -549,7 +552,7 @@ address {
 	color: #5B6F82;
 	border-width: 1px 0;
 	border-style: solid;
-	border-color: #E3E7EB;
+	border-color: #f5eded;
 	padding: 24px 0;
 	margin: 0 0 24px
 }
@@ -741,7 +744,7 @@ input.button:hover::before {
 	width: 100%;
 	display: block;
 	height: 1px;
-	background: #E3E7EB;
+	background: #f5eded;
 	background: linear-gradient(to right, rgba(227, 231, 235, 0.1) 0, rgba(227, 231, 235, 0.6) 50%, rgba(227, 231, 235, 0.1) 100%)
 }
 
@@ -757,7 +760,7 @@ input.button:hover::before {
 	width: 100%;
 	display: block;
 	height: 1px;
-	background: #E3E7EB;
+	background: #f5eded;
 	background: linear-gradient(to right, rgba(227, 231, 235, 0.1) 0, rgba(227, 231, 235, 0.6) 50%, rgba(227, 231, 235, 0.1) 100%)
 }
 
@@ -1129,7 +1132,7 @@ input.button:hover::before {
 	background-color: #fff;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #E3E7EB;
+	border-color: #f5eded;
 	color: #5B6F82;
 	max-width: 100%;
 	width: 100%
@@ -1232,7 +1235,7 @@ input.button:hover::before {
 	text-transform: uppercase;
 	text-decoration: none !important;
 	background-color: #fff;
-	color: #202b35 !important;
+	color: #ddd !important;
 	border: none;
 	border-radius: 2px;
 	cursor: pointer;
@@ -1285,18 +1288,15 @@ input.button:hover::before {
 }
 
 .button-primary {
-	color: #1b1c1c !important;
 	transition: background .15s ease
 }
 
 .button-primary {
-	background: #FFE23F;
-	background: linear-gradient(65deg, #FFE470 0, #FFE23F 100%)
+	background: #1b1c1c;
 }
 
 .button-primary:hover {
-	background: rgb(211, 187, 53);
-	background: linear-gradient(65deg, rgb(220, 197, 96) 0, rgb(226, 201, 56) 100%)
+	background: #333434;
 }
 
 .button-block {
@@ -1571,7 +1571,7 @@ input.button:hover::before {
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
-	box-shadow: 0 16px 48px #E3E7EB;
+	box-shadow: 0 16px 48px #f5eded;
 	mix-blend-mode: multiply
 }
 
@@ -1629,7 +1629,7 @@ input.button:hover::before {
 }
 
 .is-boxed {
-	background: #F6F8FA
+	background: #FCFAFA;
 }
 
 .body-wrap {
@@ -1643,7 +1643,7 @@ input.button:hover::before {
 .boxed-container {
 	max-width: 1440px;
 	margin: 0 auto;
-	box-shadow: 0 16px 48px #E3E7EB
+	box-shadow: 0 16px 48px #f5eded;
 }
 
 @supports (-ms-ime-align: auto) {
@@ -1948,7 +1948,7 @@ main {
 }
 
 [data-termynal]:after {
-	content: 'Lemon';
+	content: 'Möbius';
 	position: absolute;
 	color: var(--color-text-subtle);
 	top: 5px;
@@ -2078,7 +2078,7 @@ main {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	box-shadow: 0 16px 48px #E7EBF6;
+	box-shadow: 0 16px 48px #f5eded;
 	mix-blend-mode: multiply
 }
 
@@ -2094,7 +2094,7 @@ main {
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 50%;
-	box-shadow: 0 16px 24px #E7EBF6
+	box-shadow: 0 16px 24px #f5eded;
 }
 
 @supports (-ms-ime-align: auto) {
@@ -2141,7 +2141,7 @@ main {
 		left: calc(50% - 530px);
 		width: 1071px;
 		height: 598px;
-		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA3MSIgaGVpZ2h0PSI1OTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgPGRlZnM+ICAgIDxwYXRoIGQ9Ik0xMDUwLjMxIDU5Mi4xOTVjNjcuMDEtNTIuNzMtNTYuNTItODAuNzgtNTYuNTItMjE3LjUxIDAtMTM2LjcyOCA1Ni41Mi0zMzMtODEuNjktMzcwLjI3Qzc3My44OTMtMzIuODU1IDM2OS4zOCAxNzYuNjk4IDUxLjc1MyAyMjUuMDg3LTI2NS44NzYgMjczLjQ3NSA5ODMuMyA2NDQuOTI2IDEwNTAuMzEgNTkyLjE5NXoiIGlkPSJhIi8+ICA8L2RlZnM+ICA8dXNlIGZpbGw9IiNGNEY3RkUiIHRyYW5zZm9ybT0ibWF0cml4KC0xIDAgMCAxIDEwNzAuMzU4IDApIiB4bGluazpocmVmPSIjYSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+);
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA3MSIgaGVpZ2h0PSI1OTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgPGRlZnM+ICAgIDxwYXRoIGQ9Ik0xMDUwLjMxIDU5Mi4xOTVjNjcuMDEtNTIuNzMtNTYuNTItODAuNzgtNTYuNTItMjE3LjUxIDAtMTM2LjcyOCA1Ni41Mi0zMzMtODEuNjktMzcwLjI3Qzc3My44OTMtMzIuODU1IDM2OS4zOCAxNzYuNjk4IDUxLjc1MyAyMjUuMDg3LTI2NS44NzYgMjczLjQ3NSA5ODMuMyA2NDQuOTI2IDEwNTAuMzEgNTkyLjE5NXoiIGlkPSJhIi8+ICA8L2RlZnM+ICA8dXNlIGZpbGw9IiNmNWVkZWQiIHRyYW5zZm9ybT0ibWF0cml4KC0xIDAgMCAxIDEwNzAuMzU4IDApIiB4bGluazpocmVmPSIjYSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+);
 		background-repeat: no-repeat
 	}
 	.testimonials .section-title {
@@ -2219,7 +2219,7 @@ main {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	box-shadow: 0 16px 48px #E7EBF6;
+	box-shadow: 0 16px 48px #eee;
 	mix-blend-mode: multiply
 }
 
@@ -2309,7 +2309,7 @@ main {
 		right: -506px;
 		width: 725px;
 		height: 651px;
-		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzI1IiBoZWlnaHQ9IjY1MSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik02NzguNjAzIDY0My44NThjMTExLjgyLTU5LjExNS0xNS43Ny0xODUuMzQ0LTE1Ljc3LTMyMS40ODMgMC0xMzYuMTM4LS4yODQtMzQwLjM3MS0xMzYuNDIyLTMyMS4xMDUtMTM2LjEzOCAxOS4yNjYtOTQuMjg4IDE4Ny4xNjctNDQxLjkgMjY5LjE0OC0zNDcuNjE0IDgxLjk4IDQ4Mi4yNzMgNDMyLjU1NCA1OTQuMDkyIDM3My40NHoiIGZpbGw9IiNGNEY3RkUiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzI1IiBoZWlnaHQ9IjY1MSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gIDxwYXRoIGQ9Ik02NzguNjAzIDY0My44NThjMTExLjgyLTU5LjExNS0xNS43Ny0xODUuMzQ0LTE1Ljc3LTMyMS40ODMgMC0xMzYuMTM4LS4yODQtMzQwLjM3MS0xMzYuNDIyLTMyMS4xMDUtMTM2LjEzOCAxOS4yNjYtOTQuMjg4IDE4Ny4xNjctNDQxLjkgMjY5LjE0OC0zNDcuNjE0IDgxLjk4IDQ4Mi4yNzMgNDMyLjU1NCA1OTQuMDkyIDM3My40NHoiIGZpbGw9IiNmNWVkZWQiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
 		background-repeat: no-repeat
 	}
 }
@@ -2434,7 +2434,7 @@ main {
 	}
 }
 
-/* Lemon hover animation */
+/* Möbius hover animation */
 
 @keyframes shake {
 	25% {

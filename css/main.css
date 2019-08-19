@@ -2871,13 +2871,13 @@ a.deepchef {
 	transition: background-size .2s;
 }
 
-a.lemon {
+a.Möbius {
 	background:
-		linear-gradient(to bottom, #fee050 0%,
-		#fee050 100%);
+		linear-gradient(to bottom, #ebbcbc 0%,
+		#ebbcbc 100%);
 	background-position: 0 100%;
 	background-repeat: repeat-x;
-	background-size: 4px 4px;
+	background-size: 3px 3px;
 	color: #54514d;
 	text-decoration: none;
 	transition: background-size .2s;
@@ -2924,10 +2924,10 @@ a.deepchef-mobile {
 	font-weight: 400;
 	border-bottom: 1px solid #E37B66;
 }
-a.lemon-mobile {
+a.Möbius-mobile {
 	color: #FFF;
 	font-weight: 400;
-	border-bottom: 1px solid #fee050;
+	border-bottom: 1px solid #ebbcbc;
 }
 a.sirlexa-mobile {
 	color: #FFF;
@@ -2947,7 +2947,7 @@ a.ha-index-mobile {
 a.deepchef-mobile:hover {
 	color: #FFF;
 }
-a.lemon-mobile:hover {
+a.Möbius-mobile:hover {
 	color: #FFF;
 }
 a.sirlexa-mobile:hover {
@@ -2963,7 +2963,7 @@ a.ha-index-mobile:hover {
 a.deepchef:hover {
 	background-size: 4px 50px;
 }
-a.lemon:hover {
+a.Möbius:hover {
 	background-size: 4px 50px;
 }
 a.sirlexa:hover {
