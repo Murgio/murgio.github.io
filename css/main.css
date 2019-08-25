@@ -677,7 +677,6 @@ textarea,
 	grid-template-columns: 1fr;
 	grid-gap: 3rem;
 	padding-top: 1em;
-	padding-bottom: 4rem;
 	width: max-content;
   }
 
@@ -728,6 +727,7 @@ textarea,
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin: 0 auto;
+  padding-bottom: 4rem;
   width: max-content;
 }
 
