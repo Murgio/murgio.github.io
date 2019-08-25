@@ -61,3 +61,7 @@ small {
 .align-items-left {
   align-items: flex-start !important;
 }
+
+.justify-content-between {
+  justify-content: space-between;
+}
