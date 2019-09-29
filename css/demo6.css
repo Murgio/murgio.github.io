@@ -340,7 +340,7 @@ h1,
 .cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #181a1e; opacity: .2;}
 
 @media screen and (max-width: 991px) {
-	.cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #181a1e; opacity: .60;}
+	.cover:after, .card-3d-right-side:after, .card-3d-bottom-side:after, .header:before { background: #181a1e; opacity: .72;}
 }
 
 

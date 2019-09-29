@@ -140,14 +140,13 @@
 
 			// FULL BROWSER BACK BUTTON SUPPORT 
 			$.address.change(function() {
-				//console.log('addres changed');
 				setActivePage();
 				var detailUrl = giveDetailUrl();
 				if(detailUrl !== -1 ) {
 					showProjectDetails(detailUrl);
 				} else {
 					// if url contains portfolio keyword
-					if ($.address.path().indexOf("/"+ portfolioKeyword) !== -1) { 
+					if ($.address.path().indexOf("/"+ portfolioKeyword) !== -1) {
 						if(porftolioSingleActive) {
 							hideProjectDetails(true,false);
 							porftolioSingleJustClosed = false;
@@ -876,8 +875,7 @@
 		
 		var path = $.address.path();
 		path = path.slice(1, path.length);
-		
-		// if hash tag doesnt exists - close page
+		// if hash tag doesnt exists - close page/ card
 		if(path === "") {  
 			closePage();
 			}
@@ -889,9 +887,9 @@
 				porftolioSingleJustClosed = false;
 			} else {
 				 if (giveDetailUrl() === -1){
-				//porftolioSingleJustClosed = false;
-				var new_url = $( 'a[data-slug=' + path + ']' ).data('file-url');
-				showPage(new_url);
+					//porftolioSingleJustClosed = false;
+					var new_url = $( 'a[data-slug=' + path + ']' ).data('file-url');
+					showPage(new_url);
 				}
 			}
 			
