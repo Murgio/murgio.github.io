@@ -1604,6 +1604,9 @@ a.social-link:hover {
 	.media-date .day {
 		font-size: 22px; font-weight: 700; line-height: 1;
 		}
+	.media-date .thought {
+		font-size: 28px; font-weight: 700; line-height: 1;
+		}
 
 /* LATEST POSTS */
 .latest-posts {
