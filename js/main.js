@@ -95,7 +95,7 @@
 					if (!isMobile()) {
 						$('.card-intro').toggle();
 					}
-				}, 560);
+				}, 420);
 				//$('.card-nav a[href="#' +  '/about' +'"]').parent().addClass('current_page_item').siblings().removeClass('current_page_item');
 			});
 			// close card
