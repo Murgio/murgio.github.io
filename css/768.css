@@ -120,6 +120,15 @@
     .event h2 + p i,
 	.event h2 + p img {
         font-size: 34px;
+		}
+	.event-research {
+        padding: 0 1em 3em 4em;
+        }
+    .event-research h3 {
+		}
+    .event-research h2 + p i,
+	.event-research h2 + p img {
+		
         }
     
 	/* PORTFOLIO SINGLE */

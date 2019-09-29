@@ -354,6 +354,7 @@ a.more-link:hover,
  	background-color: #bcb1a6;
 	}
 .bypostauthor > article,
+.event-research h3,
 .event h3,
 input:not([type=submit]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]):focus, 
 textarea:focus, 
@@ -363,6 +364,7 @@ select:focus,
 	border-color: #bcb1a6
 	}
 .event h3,
+.event-research h3,
 .entry-title a:hover {
 	color: #bcb1a6
 	}
