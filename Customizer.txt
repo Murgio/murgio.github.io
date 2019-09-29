@@ -232,8 +232,8 @@ button:not(.button):hover,
 		
 		
 	- Card Title Background color (input:colorpicker)
-		default		: #54514d
-		css			: .card-info h2 { background: #54514d; }
+		default		: #2f2e2b
+		css			: .card-info h2 { background: #2f2e2b; }
 		
 	- Card Title Text Color (input:colorpicker)
 		default		: #fff
