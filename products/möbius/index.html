@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="Muriz Serifovic">
+   <meta name="keywords" content="muriz serifovic, machine learning, deep learning, data science, code editor">
+   <meta name="author" content="Muriz Serifovic">
+   <meta name="theme-color" content="#848fe7" />
+   <!-- FAV and TOUCH ICONS -->
+   <link rel="shortcut icon" href="images/ico/favicon.ico">
+   <title>Möbius | Code Editor for Data Analysis</title>
+   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i;Linden+Hill&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="dist/css/style.css">
+   <script src="dist/js/vendor/scrollreveal.min.js"></script>
+   <script src="dist/js/vendor/jquery-3.2.1.min.js"></script>
+   <link rel="stylesheet" href="dist/css/chartist.min.css">
+   <link href="dist/css/jquery.terminal.min.css" rel="stylesheet" />
+
+</head>
+<div id="cookie">
+   <span class="close-button" title="Close" onclick='$("#cookie").fadeOut(300, function() { $(this).remove(); $(".close-button").remove(); setCookie("privacyPolicy","1", 30); });'></span>
+</div>
+
+<body class="is-boxed has-animations">
+   <div class="body-wrap boxed-container">
+
+      <!-- HEADER ICON-->
+      <header class="site-header">
+         <div class="container">
+            <div class="site-header-inner">
+               <div class="brand header-brand animate shake">
+                  <div class="m-8">
+                     <a href="/">
+                        <img src="dist/images/isolated.svg" width="64px" alt="Möbius icon">
+                     </a>
+                  </div>
+               </div>
+               <div style="float:left; display:inline-block; width: 95%; font-family: 'Linden Hill', serif;">
+                     Möbius Code Editor
+                  </div>
+            </div>
+         </div>
+      </header>
+      <!-- HEADER ICON-->
+
+      <!-- MAIN-->
+      <main>
+         <section class="hero text-center">
+            <div class="container-sm">
+               <div class="hero-inner">
+                  <h1 class="hero-title h2-mobile mt-0 is-revealing">Data science, <strong> made simple.</strong></h1>
+                  <p class="hero-paragraph is-revealing">Möbius makes data plotting possible in under three lines
+                     of code. With any kind of numerical data.</p>
+                  <form class="hero-form newsletter-form field field-grouped is-revealing validate-form" method="POST"
+                     action="https://formspree.io/murgio.studio@gmail.com">
+                     <div class="control control-expanded">
+                        <input id="focusOnClick" class="input required" type="email" name="_replyto" placeholder="Enter your email address&hellip;">
+                     </div>
+                     <div class="control">
+                        <input class="control button button-primary" type="submit" value="Get early access">
+                     </div>
+                  </form>
+
+                  <!--
+                  <section class="clients section">
+                     <div class="container">
+                        <div class="clients-inner section-inner has-bottom-divider">
+                           <div class="container-sm">
+                              <ul class="list-reset mb-0">
+                                 <li>
+                                    <span class="screen-reader-text">Instagram</span>
+                                    <svg width="132" height="40" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M7.262 1.5C6.103 1.5 4.6 2.768 3.714 3.612 1.765 5.397 0 8.68 0 11.313c0 3.744 3.085 5.157 3.866 5.157.257 0 .476-.137.476-.498 0-.282-.173-.517-.346-.758-.714-1.127-.944-2.203-.944-3.654 0-3.025 1.352-5.797 2.474-7.066.206-.23.674-.725.813-.725.14 0 .174.116.174.477l-.13 19.798c0 3.095-.866 4.324-.866 5.053 0 .32.134.403.39.403 1.215 0 2.426-1.527 2.769-2.085C9.739 25.52 10 24.041 10 19.773V3.137c0-.45-.122-.645-.537-.922-.606-.398-1.301-.715-2.2-.715zm36.842 0c-.592 0-.846.31-.874 1.266L43.1 6.728l-3.47-.12c-.211-.005-.306.061-.398.246-.295.551-.45.984-.45 1.704 0 .586.266.648.503.648l3.611.104-.01 7.569c0 1.605-1.016 3.688-2.816 5.42 0 0 .155-.523.146-1.071 0-1.554-1.001-2.961-2.336-3.957l-3.258-2.447c.683-.788 1.84-2.353 1.84-3.674 0-1.024-.645-1.454-1.847-1.454-1.697 0-3.665 1.552-3.665 3.853 0 .839.374 1.594.942 2.172a127.313 127.313 0 0 1-2.719 4.834c-.623 1.066-1.676 2.7-2.299 2.7-.46 0-.672-.722-.672-3.495 0-2.304.164-4.808.246-7.212 0-.551-.09-1.06-.807-1.558-.659-.422-1.473-1.01-2.312-1.01-1.864 0-3.134 1.712-4.005 3.386-.901 1.736-1.389 3.199-2.077 5.32l.076-7.303c.024-.52-.108-.722-.525-.9-.542-.229-1.339-.493-2.046-.493-.59 0-.662.254-.662.874l-.08 8.763-.009 3.38c0 3.047.382 3.555 2.193 3.555 1.003 0 1.324-.117 1.344-.95.028-.55.291-1.883.648-3.22 1.043-3.948 2.28-7.07 4.41-9.45.223-.23.395-.148.36.18 0 0-.337 5.342-.337 7.527 0 3.886.599 5.913 2.536 5.913 1.9 0 3.767-2.438 4.786-4.084l3.27-5.459c2.118 1.802 3.596 3.2 3.596 4.9 0 1.056-.668 2.09-1.685 2.09-1.27 0-2.083-1.339-2.941-1.339-.713 0-1.627 1.373-1.627 2.153 0 .736 1.609 1.778 4.496 1.778 4.262 0 6.548-2.92 7.92-6.154.263 3.838 1.795 6.08 4.184 6.08 1.567 0 3.378-1.977 4.201-4.391 0 0 .082.627.707 1.91.862 1.678 2.17 2.447 3.797 2.447 2.022 0 3.752-1.224 4.809-3.278.16 1.557 1.469 3.27 3.574 3.27 1.321 0 2.526-1.01 3.317-2.675 0 0 1.024 2.75 3.987 2.75 1.664 0 3.634-1.54 4.105-2.657l.052 1.626-4.396 4.047c-1.276 1.237-2.634 3.014-2.634 4.982 0 2.503 2.367 3.942 4.45 3.942 2.165 0 3.602-1.37 4.388-2.517.99-1.485 1.41-4.283 1.41-7.019l-.099-4.113c2.963-3.251 5.281-7.745 6.314-10.925l2.249-.06c.435-.029.414.143.353.396-.395 1.668-.74 3.556-.74 5.437 0 3.107.717 4.46 1.747 5.564.896.926 1.787 1.238 2.725 1.238 1.834 0 2.985-1.512 3.35-2.465.861 1.677 2.13 2.458 3.756 2.458 2.022 0 3.752-1.224 4.809-3.278.16 1.556 1.469 3.27 3.574 3.27 1.573 0 2.485-.906 3.202-2.613.015.55.036 1.135.052 1.684.019.284.246.463.45.537.668.253 1.255.38 1.782.38 1.375 0 1.674-.283 1.674-1.18 0-1.48.043-3.818.464-5.695.447-1.869 1.122-3.985 2.053-5.457.084-.152.29-.112.298.072.134 3.15.345 8.482 1.174 9.863.409.658 1.041 1.138 1.988 1.138.443 0 .988-.189 1.127-.307.14-.11.212-.232.203-.458 0-4.027 1.258-7.925 2.518-10.546.034-.078.133-.084.13.018l-.071 2.902c0 4.765.344 7.775 2.728 9.223a3.2 3.2 0 0 0 4.407-1.377c.446-.85.863-2.486.863-3.413 0-.359.004-.943-.585-.943-.323 0-.517.238-.594.597-.188.779-.342 1.446-.633 2.216-.279.735-.694 1.162-1.187 1.162-.579 0-.872-.454-1.04-.735-.739-1.125-.798-3.708-.798-5.864l.178-5.55c0-.458-.192-1.008-.902-1.413-.476-.274-1.68-.79-2.419-.79-.684 0-1.016.388-1.262.956-.464 1.02-2.012 5.023-2.427 8.277-.015.086-.122.104-.13-.005a81.283 81.283 0 0 1-.323-6.945c0-.565-.139-1.374-1.34-1.898-.584-.242-1.067-.39-1.657-.39-.732 0-.89.358-1.152.832-.829 1.53-1.402 3.523-2.261 6.04l.013-5.757c0-.27-.165-.622-.639-.717-1.174-.27-1.718-.392-2.18-.392-.337 0-.522.268-.522.558l-.063 9.815c-.227 1.201-1.148 4.07-2.453 4.07-1.071 0-1.571-1.085-1.571-5.615l.194-7.362c0-.465-.306-.66-.751-.858-.638-.252-1.145-.353-1.792-.353-.813 0-1.092.389-.928 1.322-.893-1.207-1.786-1.874-3.365-1.874-3.168 0-5.556 3.805-5.556 9.334-.031 1.55.344 3.092.344 3.092-.287 1.286-.96 2.335-1.892 2.335-1.174 0-1.923-1.658-1.923-4.53 0-2.883 1.1-6.133 1.1-7.014 0-1.024-.673-1.672-1.862-1.672-.596 0-2.808.5-3.941.665 0 0 .128-.54.118-.963 0-1.01-.474-1.643-1.653-1.643-1.44 0-2.497 1.027-2.497 2.778 0 .786.454 1.513 1.054 1.903-.78 3.243-2.045 5.655-3.911 8.35l.157-10.911c0-.355-.095-.575-.79-.845a4.397 4.397 0 0 0-1.724-.342c-1.095 0-1.023.781-.964 1.366-.502-.887-1.599-1.94-3.292-1.94-4.612 0-6.029 7.022-5.334 12.01 0 .608-.595 2.766-1.938 2.766-1.071 0-1.571-1.084-1.571-5.614l.196-7.362c0-.465-.308-.66-.754-.858-.637-.252-1.142-.353-1.79-.353-.813 0-1.092.389-.927 1.322-.894-1.207-1.789-1.874-3.367-1.874-3.168 0-5.588 3.48-5.588 9.009 0 2.11-1.82 5.33-3.097 5.33-.71 0-1.464-1.299-1.464-4.619.004-2.263.313-9.968.313-9.968l4.455-.072c.213-.002.336-.234.415-.377.204-.414.303-.69.303-1.186 0-.448-.09-.611-.664-.643l-4.44-.267.188-4.13c.013-.26-.144-.43-.43-.558-.859-.335-1.913-.66-2.58-.66zm12.661 11c1.11 0 2.235 1.082 2.235 4.92 0 4.832-1.646 7.08-2.912 7.08C54.9 24.5 54 22.709 54 19.19c0-3.556.88-6.69 2.765-6.69zm43 0c1.11 0 2.235 1.082 2.235 4.92 0 4.832-1.646 7.08-2.912 7.08C97.9 24.5 97 22.709 97 19.19c0-3.556.88-6.69 2.765-6.69zm-26.864 0c1.455 0 2.099 1.594 2.099 4.686 0 4.66-1.303 7.314-2.886 7.314-1.01 0-2.173-1.764-2.112-5.233 0-2.218.68-6.767 2.899-6.767zM76 27.5v1.843c0 6.113-1.752 7.157-3.16 7.157-.533 0-1.84-.375-1.84-1.887 0-2.115 2.377-4.52 3.116-5.263L76 27.5z"
+                                          fill="#93A2B3" fill-rule="nonzero" />
+                                    </svg>
+                                 </li>
+                                 <li>
+                                    <span class="screen-reader-text">Dell</span>
+                                    <svg width="132" height="40" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M40.405 20.317c0-3.065-2.053-4.807-4.96-4.807h-1.779v9.617h1.729c2.703 0 5.01-1.455 5.01-4.81zm31.646 3.46L58.945 34l-11.978-9.342c-1.729 4.113-5.905 6.97-10.715 6.97H26V9.006h10.252c5.374 0 9.247 3.386 10.711 6.993l11.982-9.332 4.438 3.46-10.981 8.55 2.11 1.635 10.978-8.544 4.444 3.45-10.98 8.559 2.108 1.64 10.99-8.561v-7.85h7.966v16.02h7.947v6.63H72.05v-7.879zm26.005 1.251H106v6.628H90.082V9.006h7.974v16.022z"
+                                          fill="#93A2B3" fill-rule="nonzero" />
+                                    </svg>
+                                 </li>
+                                 <li>
+                                    <span class="screen-reader-text">Unilever</span>
+                                    <svg width="132" height="40" xmlns="http://www.w3.org/2000/svg">
+                                       <g fill="#93A2B3" fill-rule="nonzero">
+                                          <path d="M18.106 9.105c-1.146.384-2.394 2.07-2.037 4.63.163 1.157.757 2.72.961 3.418.362 1.223.79 3.138.223 7.12-.718 4.987-2.431 8.434-6.288 8.355-2.572 0-4.934-2.147-5.214-7.665-.289-5.212.075-7.429.857-12.024.355-2.077.496-3.836-1.072-3.528-1.997.455-2.57 1.301-3.214 3.68C1.109 17.534.9 20.673 1.036 23.816c.29 6.665 3.071 11.033 9.36 11.182 7.283.157 10.213-7.43 10.494-13.713.217-4.6.144-7.813-.498-10.265-.499-1.608-1.001-2.302-2.286-1.915zM126.935 18c-7.219 0-8.75 10.897-9.902 10.897-1.92 0-1.305-8.732-2.692-8.732-1.229-.003-1.83 1.472-1.996 2.162-.952 3.974-3.837 9.818-8.141 9.818-.996 0-2.762-.389-2.762-1.393 0-1.083 6.761-1.232 6.761-6.413 0-1.929-1.765-4.638-4.377-4.638-3.455 0-6.826 3.79-6.826 9.043 0 4.71 2.909 6.256 5.825 6.256 5.069 0 8.14-4.175 9.752-7.65.77 2.32 1.224 7.65 3.151 7.65.764 0 1.306-.387 2.228-2.469 2.298-5.18 4.526-11.132 7.599-11.132 1.149 0 .461 2.092 3.225 2.092 1.302 0 2.22-1.082 2.22-2.323 0-1.781-1.61-3.168-4.065-3.168zm-24.112 4.796c1.615 0 2.079 1.922 1.691 3.086-.385 1.157-1.765 2.476-3.913 2.86-.462-1.161-.693-5.946 2.222-5.946zM96.574 16.853c-1.727 0-2.999 1.9-2.999 4.153 0 2.045.525 2.187.525 3.598 0 1.898-1.047 4.368-2.323 4.368-2.984 0-3.737-11.138-5.533-11.138-1.047 0-1.572 1.195-1.87 2.044-1.654 4.443-3.888 9.307-8.155 9.307-.829 0-1.795-.357-2.321-.847 2.99-1.761 5.013-3.599 5.013-5.85 0-1.908-1.348-4.798-3.667-4.798-2.918 0-6.287 4.162-6.287 9.094 0 .92.153 1.553.304 2.042-.228.287-1.13.64-1.875.64-2.02 0-4.161-2.024-4.417-3.213 1.509-3.066 4.519-6.62 3.967-15.135-.207-3.24-2.001-5.24-4.244-5.112-3.06.178-5.853 6.606-5.407 13.438.086 1.337.705 5.006 1.574 6.82-1.519 2.292-3.447 2.634-4.568 2.634-1.577 0-3.968-.846-3.966-4.296 1.127-2.895.378-6.205-1.196-6.205-2.243 0-2.992 3.73-3.067 6.34-.746 1.555-1.572 2.822-2.697 2.822-3.365 0-3.661-9.87-6.135-9.87-2.02 0-5.491 6.273-6.543 6.273-.595 0-1.122-1.776-1.5-3.52-.104-.488-.204-1.079-.54-1.108-.668-.058-1.499.48-1.806 1.238-.31.748-.866 3.098-1.47 5.242-.362 1.235-1.254 3.845-1.36 4.821-.077.705.238 1.231.986 1.305 1.86.18 8.716-7.762 10.886-7.762 2.773 0 3.44 7.822 6.588 7.822 1.87 0 3.59-4.506 4.715-4.506 1.27 0 1.868 4.506 5.46 4.506 4.494 0 5.987-2.75 7.336-2.75 1.118 0 2.318 2.68 5.086 2.68 1.72 0 3.223-.494 5.015-1.625C71.129 31.436 72.397 32 73.601 32c7.4 0 9.496-6.273 11-6.273 1.345 0 1.046 6.202 4.87 6.202 5.081 0 8.529-8.388 8.529-12.9-.002-1.195-.38-2.176-1.426-2.176zm-34.579 5.993c-.446.03-.925-.437-1.119-3.466-.304-4.643.386-9.059 1.875-9.143 1.124-.073 1.63.816 1.76 2.787.287 4.365-1.69 9.775-2.516 9.822zm10.855 4.158c-.305-.36-.97-1.198-.97-2.967 0-2.255 1.565-2.958 2.245-2.958.816 0 1.495.988 1.495 2.181 0 1.41-.604 3.106-2.77 3.744z" />
+                                       </g>
+                                    </svg>
+                                 </li>
+                                 <li>
+                                    <span class="screen-reader-text">Uber</span>
+                                    <svg width="132" height="40" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M31.045 9h4.038v12.86c0 6.765-4.306 9.14-10.553 9.14C18.306 31 14 28.625 14 21.86V9.514c0-.358.178-.515.535-.515h4.039v12.658c0 4.055 1.784 5.735 5.956 5.735 4.195 0 5.98-1.68 5.98-5.735V9.515c0-.358.178-.515.535-.515zm45.714 3.517v5.422h10.218c.178 0 .245.09.178.269l-1.115 2.778c-.112.246-.268.358-.602.358h-6.002c-1.963 0-2.677.605-2.677 1.927v3.83H90.59c.179 0 .246.09.179.27l-1.16 2.89c-.112.246-.268.358-.603.358H73.86c-1.16 0-1.607-.403-1.607-1.277V10.501c0-1.053.58-1.501 2.097-1.501h16.242c.179 0 .246.09.179.246l-1.16 2.913c-.112.246-.268.358-.603.358H76.76zM63.93 24.637c0 4.324-3.034 5.982-7.295 5.982H45.346c-1.182 0-1.606-.403-1.606-1.277V10.501c0-1.053.557-1.501 2.097-1.501h9.17c4.015 0 7.897.695 7.897 5.489 0 2.06-.736 3.808-2.499 4.727 2.432.65 3.525 2.845 3.525 5.421zm-15.75-6.63h7.161c2.365 0 3.034-.92 3.034-2.801 0-1.882-.67-2.778-3.034-2.778h-7.162v5.578zM59.4 24.233c0-1.994-.691-2.98-3.235-2.98H50.88c-1.963 0-2.7.605-2.7 1.927v4.01h7.987c2.544 0 3.235-.985 3.235-2.957zm59.346 6.385h-4.105c-.335 0-.469-.134-.603-.358l-4.35-7.886h-3.994c-1.963 0-2.7.605-2.7 1.926v6.318H99.07c-.357 0-.535-.18-.535-.515V10.5c0-1.053.58-1.501 2.097-1.501h9.214c5.377 0 8.612 1.411 8.612 6.654 0 4.055-1.941 5.645-4.35 6.273l4.84 8.311c.09.135.09.381-.2.381zm-4.82-14.876c0-2.195-.602-3.27-3.413-3.27h-7.518v6.541h7.518c2.811 0 3.414-1.053 3.414-3.27z"
+                                          fill="#93A2B3" fill-rule="nonzero" />
+                                    </svg>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </section>-->
+
+                  <!-- FIRST PLOT-->
+                  <div class="hero-browser">
+                     <div class="bubble-3 is-revealing">
+                        <svg width="427" height="286" viewBox="0 0 427 286" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <defs>
+                              <path d="M213.5 286C331.413 286 427 190.413 427 72.5S304.221 16.45 186.309 16.45C68.396 16.45 0-45.414 0 72.5S95.587 286 213.5 286z"
+                                 id="bubble-3-a" />
+                           </defs>
+                           <g fill="none" fill-rule="evenodd">
+                              <mask id="bubble-3-b" fill="#fff">
+                                 <use xlink:href="#bubble-3-a" />
+                              </mask>
+                              <use fill="#FFEB93" xlink:href="#bubble-3-a" />
+                              <path d="M64.5 129.77c117.913 0 213.5-95.588 213.5-213.5 0-117.914-122.779-56.052-240.691-56.052C-80.604-139.782-149-201.644-149-83.73c0 117.913 95.587 213.5 213.5 213.5z"
+                                 fill="#FFE23F" mask="url(#bubble-3-b)" />
+                              <path d="M381.5 501.77c117.913 0 213.5-95.588 213.5-213.5 0-117.914-122.779-56.052-240.691-56.052C236.396 232.218 168 170.356 168 288.27c0 117.913 95.587 213.5 213.5 213.5z"
+                                 fill="#FFF7CE" mask="url(#bubble-3-b)" />
+                           </g>
+                        </svg>
+                     </div>
+                     <div class="bubble-4 is-revealing">
+                        <svg width="230" height="235" viewBox="0 0 230 235" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <defs>
+                              <path d="M196.605 234.11C256.252 234.11 216 167.646 216 108 216 48.353 167.647 0 108 0S0 48.353 0 108s136.959 126.11 196.605 126.11z"
+                                 id="bubble-4-a" />
+                           </defs>
+                           <g fill="none" fill-rule="evenodd">
+                              <mask id="bubble-4-b" fill="#fff">
+                                 <use xlink:href="#bubble-4-a" />
+                              </mask>
+                              <use fill="#7CE8DD" xlink:href="#bubble-4-a" />
+                              <circle fill="#3BDDCC" mask="url(#bubble-4-b)" cx="30" cy="108" r="108" />
+                              <circle fill="#B1F1EA" opacity=".7" mask="url(#bubble-4-b)" cx="265" cy="88" r="108" />
+                           </g>
+                        </svg>
+                     </div>
+                     <div class="hero-browser-inner is-revealing">
+                        <div id="termynal" data-termynal data-termynal data-ty-typeDelay="50" data-ty-lineDelay="390">
+                           <span data-ty="input" data-ty-prompt="1">wages = "employee_wages.csv"</span>
+                           <span data-ty="input" data-ty-prompt="2">wages = load(from=wages, k=2)</span>
+                           <span data-ty="input" data-ty-prompt="3">squeeze(wages)</span>
+                        </div>
+                        <svg width="900" height="590" viewBox="0 10 900 590" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <g fill="none" fill-rule="evenodd">
+                              <rect width="900" height="590" rx="8" fill="#FFF" style="mix-blend-mode:multiply;filter:url(#dropshadow-1)" />
+                              <rect width="900" height="590" rx="8" fill="#1b1c1c" />
+                              <g>
+                                 <path fill="#495264" d="M42 0h810v2H37z" />
+                              </g>
+                           </g>
+                        </svg>
+                     </div>
+                     <div class="ct-chart ct-golden-section"></div>
+                     <div class="bubble-1 is-revealing">
+                        <svg width="61" height="52" viewBox="0 0 61 52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <defs>
+                              <path d="M32 43.992c17.673 0 28.05 17.673 28.05 0S49.674 0 32 0C14.327 0 0 14.327 0 32c0 17.673 14.327 11.992 32 11.992z"
+                                 id="bubble-1-a" />
+                           </defs>
+                           <g fill="none" fill-rule="evenodd">
+                              <mask id="bubble-1-b" fill="#fff">
+                                 <use xlink:href="#bubble-1-a" />
+                              </mask>
+                              <use fill="#FF6D8B" xlink:href="#bubble-1-a" />
+                              <path d="M2 43.992c17.673 0 28.05 17.673 28.05 0S19.674 0 2 0c-17.673 0-32 14.327-32 32 0 17.673 14.327 11.992 32 11.992z"
+                                 fill="#FF4F73" mask="url(#bubble-1-b)" />
+                              <path d="M74 30.992c17.673 0 28.05 17.673 28.05 0S91.674-13 74-13C56.327-13 42 1.327 42 19c0 17.673 14.327 11.992 32 11.992z"
+                                 fill-opacity=".8" fill="#FFA3B5" mask="url(#bubble-1-b)" />
+                           </g>
+                        </svg>
+                     </div>
+                     <div class="bubble-2 is-revealing">
+                        <svg width="179" height="126" viewBox="0 0 179 126" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <defs>
+                              <path d="M104.697 125.661c41.034 0 74.298-33.264 74.298-74.298s-43.231-7.425-84.265-7.425S0-28.44 0 12.593c0 41.034 63.663 113.068 104.697 113.068z"
+                                 id="bubble-2-a" />
+                           </defs>
+                           <g fill="none" fill-rule="evenodd">
+                              <mask id="bubble-2-b" fill="#fff">
+                                 <use xlink:href="#bubble-2-a" />
+                              </mask>
+                              <use fill="#838DEA" xlink:href="#bubble-2-a" />
+                              <path d="M202.697 211.661c41.034 0 74.298-33.264 74.298-74.298s-43.231-7.425-84.265-7.425S98 57.56 98 98.593c0 41.034 63.663 113.068 104.697 113.068z"
+                                 fill="#626CD5" mask="url(#bubble-2-b)" />
+                              <path d="M43.697 56.661c41.034 0 74.298-33.264 74.298-74.298s-43.231-7.425-84.265-7.425S-61-97.44-61-56.407C-61-15.373 2.663 56.661 43.697 56.661z"
+                                 fill="#B1B6F1" opacity=".64" mask="url(#bubble-2-b)" />
+                           </g>
+                        </svg>
+                     </div>
+                  </div>
+                  <!-- FIRST PLOT-->
+
+               </div>
+            </div>
+         </section>
+
+         <!-- FIRST FEATURES SECTION-->
+         <section class="features2 section text-center">
+            <div class="container">
+               <div class="features-inner">
+                  <div class="container-sm">
+                     <h2 class="section-title mt-0">Meet your new data science tool.</h2>
+                     <p class="section-paragraph">Created for data analysts who desire to extract useful knowledge and
+                        business value from data they collect. Write code with Python and get clean visualisations for
+                        every kind of numerical data.</p>
+                  </div>
+                  <div class="features-wrap">
+                     <div class="feature is-revealing">
+                        <div class="feature-inner">
+                           <div class="feature-icon">
+                              <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                                 <g fill="none" fill-rule="evenodd">
+                                    <path d="M48.066 61.627c6.628 0 10.087-16.79 10.087-23.418 0-6.627-5.025-9.209-11.652-9.209C39.874 29 24 42.507 24 49.135c0 6.627 17.439 12.492 24.066 12.492z"
+                                       fill-opacity=".24" fill="#A0A6EE" />
+                                    <path d="M26 54l28-28" stroke="#838DEA" stroke-width="2" stroke-linecap="square" />
+                                    <path d="M26 46l20-20M26 38l12-12M26 30l4-4M34 54l20-20M42 54l12-12" stroke="#767DE1"
+                                       stroke-width="2" stroke-linecap="square" />
+                                    <path d="M50 54l4-4" stroke="#838DEA" stroke-width="2" stroke-linecap="square" />
+                                 </g>
+                              </svg>
+                           </div>
+                           <h3 class="feature-title">Intelligent</h3>
+                           <p class="text-sm">Gain new insights with our <strong>machine learning algorithms</strong>
+                              and automatically
+                              perform clustering and regression methods on the fly. With <strong>Auto-Complete</strong>,
+                              Möbius provides
+                              ideal hyperparameters and recommends best practices in the current context.</p>
+                        </div>
+                     </div>
+                     <div class="feature is-revealing">
+                        <div class="feature-inner">
+                           <div class="feature-icon">
+                              <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                                 <g fill="none" fill-rule="evenodd">
+                                    <path d="M48.066 61.627c6.628 0 10.087-16.79 10.087-23.418 0-6.627-5.025-9.209-11.652-9.209C39.874 29 24 42.507 24 49.135c0 6.627 17.439 12.492 24.066 12.492z"
+                                       fill-opacity=".24" fill="#75ABF3" />
+                                    <path d="M34 52V35M40 52V42M46 52V35M52 52V42M28 52V28" stroke="#4D8EF7"
+                                       stroke-width="2" stroke-linecap="square" />
+                                 </g>
+                              </svg>
+                           </div>
+                           <h3 class="feature-title">Lightweight</h3>
+                           <p class="text-sm">Möbius is a <strong>lightweight, yet powerful code editor</strong>. We
+                              blend visual tools
+                              into the editor so you get the right amount of help when you want it without getting in
+                              the way of your analysis.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- FIRST FEATURES SECTION-->
+
+         <section class="hero text-center">
+            <div class="container-sm">
+               <div class="hero-inner">
+                  <p class="hero-paragraph is-revealing">We respect <strong>simple and clean code</strong>. Use Möbius's
+                     custom API,
+                     written to be used by humans.</p>
+
+
+                  <!-- SECOND PLOT-->
+                  <div class="hero-browser">
+                     <div class="hero-browser-inner2 is-revealing">
+                        <div class="bubble-5 is-revealing">
+                           <svg width="530" height="380" xmlns="http://www.w3.org/2000/svg">
+                              <defs>
+                                 <linearGradient x1="8.685%" y1="23.733%" x2="85.808%" y2="82.837%" id="media-illustration-a">
+                                    <stop stop-color="#FFF" stop-opacity=".48" offset="0%" />
+                                    <stop stop-color="#FFF" stop-opacity="0" offset="100%" />
+                                 </linearGradient>
+                                 <linearGradient x1="-5.881%" y1="42.743%" x2="92.827%" y2="0%" id="media-illustration-b">
+                                    <stop stop-color="#F9425F" offset="0%" />
+                                    <stop stop-color="#F97C58" stop-opacity="0" offset="100%" />
+                                 </linearGradient>
+                              </defs>
+                              <g fill="none" fill-rule="evenodd">
+                                 <circle fill="url(#media-illustration-a)" cx="276" cy="190" r="190" />
+                                 <path d="M551.537 237.857c-73.787 61.801-117.197 90.657-130.23 86.569-19.552-6.133 9.14-19.504-15.204-42.174-16.229-15.113-89.027 2.342-218.392 52.365C64.847 373.514 2.309 361.511.095 298.607-2.118 235.704 34.212 185.168 109.085 147l353.631 4.164 88.82 69.736v16.957z"
+                                    fill="url(#media-illustration-b)" />
+                                 <path fill="#FFF" d="M309.392 283l3.624 1.667.984 3.53-1.158 3.36-3.45 1.443-3.249-1.639-2.143-3.165 1.62-3.674z" />
+                                 <path fill="#556B8B" d="M371.696 292l1.812.833.492 1.765-.579 1.68-1.725.722-1.624-.82-1.072-1.582.81-1.837zM337.696 359l1.812.833.492 1.765-.579 1.68-1.725.722-1.624-.82-1.072-1.582.81-1.837z" />
+                                 <path fill="#7487A3" d="M315.314 315l2.899 1.334.787 2.823-.926 2.688-2.76 1.155-2.6-1.31-1.714-2.533 1.295-2.94zM346.314 321l2.899 1.334.787 2.823-.926 2.688-2.76 1.155-2.6-1.31-1.714-2.533 1.295-2.94z" />
+                                 <path fill="#556B8B" d="M373.696 364l1.812.833.492 1.765-.579 1.68-1.725.722-1.624-.82-1.072-1.582.81-1.837zM409.696 326l1.812.833.492 1.765-.579 1.68-1.725.722-1.624-.82-1.072-1.582.81-1.837zM379.696 326l1.812.833.492 1.765-.579 1.68-1.725.722-1.624-.82-1.072-1.582.81-1.837zM419.618 346l1.087.5.295 1.059-.347 1.008-1.035.433-.975-.492-.643-.95.486-1.101z" />
+                              </g>
+                           </svg>
+                        </div>
+                        <div id="termynal2" data-termynal data-termynal data-ty-typeDelay="35" data-ty-lineDelay="210">
+                           <span data-ty="input" data-ty-prompt="4">stock_prices = regression("stock_prices.csv", normalize=False)</span>
+                           <span data-ty="input" data-ty-prompt="5">squeeze(stock_prices)</span>
+                        </div>
+                        <svg width="900" height="590" viewBox="0 10 900 590" xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <g fill="none" fill-rule="evenodd">
+                              <rect width="900" height="590" rx="4" fill="#FFF" style="mix-blend-mode:multiply;filter:url(#dropshadow-1)" />
+                              <rect width="900" height="590" rx="4" fill="#1b1c1c" />
+                              <g>
+                                 <path fill="#495264" d="M42 0h810v2H37z" />
+                              </g>
+                           </g>
+                        </svg>
+                     </div>
+                     <div class="ct-chart2 ct-golden-section"></div>
+                  </div>
+                  <!-- SECOND PLOT-->
+
+               </div>
+            </div>
+         </section>
+
+         <!-- SECOND FEATURES SECTION-->
+         <section class="features section text-center">
+            <div class="container">
+               <div class="features-inner section-inner has-bottom-divider">
+                  <div class="features-wrap">
+                     <div class="feature is-revealing">
+                        <div class="feature-inner">
+                           <div class="feature-icon">
+                              <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                                 <g fill="none" fill-rule="evenodd">
+                                    <path d="M48.066 61.627c6.628 0 10.087-16.79 10.087-23.418 0-6.627-5.025-9.209-11.652-9.209C39.874 29 24 42.507 24 49.135c0 6.627 17.439 12.492 24.066 12.492z"
+                                       fill-opacity=".32" fill="#FF97AC" />
+                                    <path stroke="#FF6D8B" stroke-width="2" stroke-linecap="square" d="M49 45h6V25H35v6M43 55h2v-2M25 53v2h2M27 35h-2v2" />
+                                    <path stroke="#FF6D8B" stroke-width="2" stroke-linecap="square" d="M43 35h2v2M39 55h-2M33 55h-2M39 35h-2M33 35h-2M45 49v-2M25 49v-2M25 43v-2M45 43v-2" />
+                                 </g>
+                              </svg>
+                           </div>
+                           <h3 class="feature-title">Customizable</h3>
+                           <p class="text-sm">Focus on what is important to you. Möbius is <strong>fully configurable
+                                 with Matplotlib, Seaborn, Bokeh</strong> and many more standard plotting libraries.</p>
+                        </div>
+                     </div>
+                     <div class="feature is-revealing">
+                        <div class="feature-inner">
+                           <div class="feature-icon">
+                              <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                                 <g transform="translate(24 25)" fill="none" fill-rule="evenodd">
+                                    <path d="M24.066 36.627c6.628 0 10.087-16.79 10.087-23.418C34.153 6.582 29.128 4 22.501 4 15.874 4 0 17.507 0 24.135c0 6.627 17.439 12.492 24.066 12.492z"
+                                       fill-opacity=".32" fill="#A0EEE5" />
+                                    <circle stroke="#39D8C8" stroke-width="2" stroke-linecap="square" cx="5" cy="4" r="4" />
+                                    <path stroke="#39D8C8" stroke-width="2" stroke-linecap="square" d="M23 22h8v8h-8zM11 10l9 9" />
+                                 </g>
+                              </svg>
+                           </div>
+                           <h3 class="feature-title">Extremely fast</h3>
+                           <p class="text-sm">Built on top of PyTables and NumPy package, <strong>Möbius uses C
+                                 extensions</strong> for the performance-critical parts of the code, making it a
+                              <strong>fast yet extremely easy-to-use tool</strong> for interactively plotting large
+                              amounts of data.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="powered-inner">
+                  <p class="hero-paragraph text-xs is-revealing"><strong>Möbius Code Editor</strong>
+                     is powered by 
+                     <a href="https://electronjs.org/" class="electron-link" target="_blank">Electron</a>.
+                  </p>
+                  <svg width="43" height="47" viewBox="0 0 256 278" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path d="M90.317 59.645c-36.264-6.605-64.936.308-76.364 20.101-8.527 14.77-6.09 34.353 5.912 55.285a3.719 3.719 0 1 0 6.452-3.699c-10.811-18.856-12.915-35.757-5.923-47.867 9.493-16.442 35.068-22.608 68.59-16.503a3.719 3.719 0 1 0 1.333-7.317zm53.63-33.684c-2.959 5.723-8.932 9.635-15.819 9.635-9.83 0-17.798-7.969-17.798-17.798C110.33 7.968 118.3 0 128.128 0c9.83 0 17.798 7.968 17.798 17.798 0 .257-.006.513-.016.767 29.461 15.237 49.933 67.197 49.933 127.226 0 24.69-3.452 48.382-9.879 68.92a3.719 3.719 0 1 1-7.097-2.221c6.196-19.802 9.539-42.747 9.539-66.699 0-56.524-18.789-105.163-44.458-119.83zM16.469 193.319a18.05 18.05 0 0 1 1.33-.05c9.83 0 17.798 7.97 17.798 17.799 0 9.83-7.969 17.797-17.798 17.797-9.83 0-17.798-7.968-17.798-17.797 0-6.692 3.693-12.52 9.151-15.56-2.68-33.265 32.283-77.855 85.12-108.36 21.946-12.671 44.798-21.665 66.267-26.265a3.719 3.719 0 0 1 1.558 7.273c-20.69 4.433-42.817 13.141-64.107 25.433-49.759 28.728-82.66 70.134-81.52 99.73zm206.26 26.546a17.716 17.716 0 0 1-2.324-8.797c0-9.83 7.969-17.798 17.798-17.798 9.83 0 17.798 7.968 17.798 17.798 0 9.83-7.968 17.797-17.798 17.797a17.717 17.717 0 0 1-10.38-3.338c-28.392 16.703-82.625 8.184-133.66-21.282-21.726-12.543-40.776-27.657-55.439-43.77a3.719 3.719 0 0 1 5.5-5.006c14.134 15.532 32.581 30.167 53.657 42.335 48.165 27.808 98.886 36.084 124.847 22.061zm-1.166-63.914a3.719 3.719 0 0 1-5.676-4.805c21.946-25.926 29.34-51.086 19.867-67.492-6.876-11.91-22.159-18.52-43.362-18.796a3.719 3.719 0 1 1 .097-7.437c23.575.307 41.315 7.98 49.706 22.514 11.404 19.752 3.113 47.965-20.632 76.016zM72.564 221.49a3.719 3.719 0 0 1 7.001-2.507c11.476 32.045 29.591 51.082 48.563 51.082 13.645 0 26.91-9.774 37.71-27.74a3.719 3.719 0 0 1 6.375 3.832c-12.018 19.99-27.428 31.345-44.085 31.345-22.839 0-43.15-21.344-55.564-56.011zm175.999-10.423c0-5.722-4.639-10.361-10.36-10.361-5.723 0-10.362 4.639-10.362 10.36 0 5.723 4.64 10.361 10.361 10.361 5.722 0 10.36-4.638 10.36-10.36zm-230.765 10.36c5.722 0 10.36-4.638 10.36-10.36 0-5.722-4.638-10.361-10.36-10.361-5.722 0-10.36 4.639-10.36 10.36 0 5.723 4.638 10.361 10.36 10.361zm110.33-193.27c5.722 0 10.36-4.638 10.36-10.36 0-5.722-4.638-10.36-10.36-10.36-5.722 0-10.36 4.638-10.36 10.36 0 5.722 4.638 10.36 10.36 10.36zm2.718 130.22c-6.951 1.502-13.8-2.916-15.305-9.868-1.499-6.952 2.916-13.8 9.868-15.305 6.951-1.502 13.8 2.915 15.305 9.867 1.502 6.952-2.916 13.8-9.868 15.305z" fill="#47848F"/></svg>
+               </div>
+               </div>
+            </div>
+         </section>
+         <!-- SECOND FEATURES SECTION-->
+
+         <!-- TESTIMONIALS SECTION-->
+         <section class="testimonials section">
+            <div class="container">
+               <div class="testimonials-inner section-inner">
+                  <h2 class="section-title mt-0 text-center">Testimonials</h2>
+                  <div class="testimonials-wrap">
+                     <div class="testimonial text-center text-xs is-revealing">
+                        <div class="testimonial-inner">
+                           <div class="testimonial-main">
+                              <div class="testimonial-header">
+                                 <img class="mb-16" src="dist/images/testimonial-01.png" alt="Testimonial">
+                              </div>
+                              <div class="testimonial-body">
+                                 <p>If I had known about Möbius earlier, perhaps I would have had enough time to work
+                                    out the Grand Unified Theory.</p>
+                              </div>
+                           </div>
+                           <div class="testimonial-footer">
+                              <div class="testimonial-name">Albert Einstein</div>
+                              <!--
+                                 <div class="testimonial-link">
+                                    <a href="#">uber.com</a>
+                                 </div> -->
+                           </div>
+                        </div>
+                     </div>
+                     <div class="testimonial text-center text-xs is-revealing">
+                        <div class="testimonial-inner">
+                           <div class="testimonial-main">
+                              <div class="testimonial-header">
+                                 <img class="mb-16" src="dist/images/testimonial-02.png" alt="Testimonial">
+                              </div>
+                              <div class="testimonial-body">
+                                 <p>When I tried to make plots with regular libraries, I was devastated. Möbius helped
+                                    me to effortlessly make plots in my new work. I now have more time to stand beneath
+                                    trees and get hit by apples.</p>
+                              </div>
+                           </div>
+                           <div class="testimonial-footer">
+                              <div class="testimonial-name">Isaac Newton</div>
+                              <!--
+                                 <div class="testimonial-link">
+                                    <a href="#">uber.com</a>
+                                 </div> -->
+                           </div>
+                        </div>
+                     </div>
+                     <div class="testimonial text-center text-xs is-revealing">
+                        <div class="testimonial-inner">
+                           <div class="testimonial-main">
+                              <div class="testimonial-header">
+                                 <img class="mb-16" src="dist/images/testimonial-03.png" alt="Testimonial">
+                              </div>
+                              <div class="testimonial-body">
+                                 <p>Möbius's AI definitely passes this Turing test!</p>
+                              </div>
+                           </div>
+                           <div class="testimonial-footer">
+                              <div class="testimonial-name">Alan Turing</div>
+                              <!--
+                                 <div class="testimonial-link">
+                                    <a href="#">uber.com</a>
+                                 </div> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- TESTIMONIALS SECTION-->
+
+         <!-- PRICING SECTION-->
+         <section class="pricing section">
+            <div class="container">
+               <div class="pricing-inner section-inner">
+                  <h2 class="section-title mt-0 text-center">Pricing</h2>
+                  <div>
+                     <div class="pricing-tables-wrap">
+                        <div class="pricing-table is-revealing">
+                           <div class="pricing-table-inner">
+                              <div class="pricing-table-main">
+                                 <div class="pricing-table-header mb-24 pb-24">
+                                    <div class="pricing-table-title h4 mt-0 mb-16">Free Alpha Access</div>
+                                    <div class="pricing-table-price"><span class="pricing-table-price-currency">$</span><span
+                                          class="pricing-table-price-amount h1">0</span>/m</div>
+                                 </div>
+                                 <ul class="pricing-table-features list-reset text-xs">
+                                    <li>
+                                       <span>Early Access To Our Machine Learning Methods</span>
+                                    </li>
+                                    <li>
+                                       <span>Python Smart Auto-Complete</span>
+                                    </li>
+                                    <li>
+                                       <span>High Quality Plot Resolution</span>
+                                    </li>
+                                    <li>
+                                       <span>.PNG, .JPG and .PDF Support</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="pricing-table-cta">
+                                 <a class="button button-primary button-shadow button-block" onclick="$('#focusOnClick').focus();">SIGN
+                                    UP</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="pricing-faqs container-sm is-revealing">
+                     <h4 class="mt-40 mb-32">FAQs</h4>
+                     <ul class="accordion">
+                        <li>
+                           <div class="accordion-title">
+                              <span>What is Möbius?</span>
+                              <div class="accordion-icon"></div>
+                           </div>
+                           <div class="accordion-body">
+                              <p>Möbius is a lightweight and powerful code editor, designed to be used with python.
+                                 Created for data analysts who desire to extract useful knowledge
+                                 and business value from data they collect.</p>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="accordion-title">
+                              <span>Why does it only support Python?</span>
+                              <div class="accordion-icon"></div>
+                           </div>
+                           <div class="accordion-body">
+                              <p>The most alluring factor of Python is that anyone aspiring to learn this language can
+                                 learn it easily and quickly. Python’s scalability lies in the flexibility that it
+                                 gives to solve problems, as in the case of YouTube that migrated to Python.
+                                 Next, the significant factor giving the push for Python is the variety of
+                                 data science/data analytics libraries made available. Möbius comes with varied
+                                 visualization options. Matplotlib provides the solid foundation around which other
+                                 libraries like Seaborn, pandas plotting, and ggplot have been built.</p>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="accordion-title">
+                              <span>Which Python versions does Möbius support?</span>
+                              <div class="accordion-icon"></div>
+                           </div>
+                           <div class="accordion-body">
+                              <p>We only support Python3. There are currently no plans to fully cooperate on Python2.</p>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="accordion-title">
+                              <span>How much does Möbius cost?</span>
+                              <div class="accordion-icon"></div>
+                           </div>
+                           <div class="accordion-body">
+                              <p>We are in an early phase. As of now, Möbius is free for educational and commercial
+                                 purposes. Our goals are to provide a simple and hassle-free way of doing data analysis
+                                 for everyone.</p>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="accordion-title">
+                              <span>I’m having problems. How can I get support?</span>
+                              <div class="accordion-icon"></div>
+                           </div>
+                           <div class="accordion-body">
+                              <p>The most efficient way is to sign up for free, and send us a brief description of your
+                                 issue.</p>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- PRICING SECTION-->
+
+         <!-- NEWSLETTER SECTION-->
+         <section class="newsletter section">
+            <div class="container-sm">
+               <div class="newsletter-inner section-inner">
+                  <div class="newsletter-header text-center is-revealing">
+                     <h2 class="section-title mt-0">Stay in touch.</h2>
+                     <p class="section-paragraph">Möbius is still in alpha phase. Leave us your email address to keep
+                        you updated on the current status. Obviously, we’ll never spam or share your details with
+                        anyone.</p>
+                  </div>
+                  <form class="hero-form newsletter-form field field-grouped text-center is-revealing validate-form" method="POST"
+                     action="https://formspree.io/murgio.studio@gmail.com">
+                     <div class="control control-expanded">
+                        <input class="input required" type="email" name="_replyto" placeholder="Enter your email address&hellip;">
+                     </div>
+                     <div class="control">
+                        <input class="control button button-primary" type="submit" value="Get early access">
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </section>
+         <!-- NEWSLETTER SECTION-->
+
+      </main>
+      <!-- MAIN-->
+
+      <!-- FOOTER-->
+      <footer class="site-footer text-light">
+         <div class="container">
+            <div class="site-footer-inner">
+               <div class="brand footer-brand animate shake">
+                  <a href="#">
+                     <img src="dist/images/isolated.svg" width="86px" alt="Möbius icon">
+                  </a>
+               </div>
+               <ul class="footer-links list-reset">
+                  <li>
+                     <a href="https://murgio.github.io" target="_blank">About me</a>
+                  </li>
+               </ul>
+               <ul class="footer-social-links list-reset">
+                  <li>
+                     <a href="https://github.com/Murgio">
+                        <span class="screen-reader-text">Github</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"
+                           stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github">
+                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="https://twitter.com/MurgioMurmani">
+                        <span class="screen-reader-text">Twitter</span>
+                        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z"
+                              fill="#FFFFFF" />
+                        </svg>
+                     </a>
+                  </li>
+               </ul>
+               <div class="footer-love">Made with <del>
+                     <span style='color: #FFF; text-decoration: none; cursor: wait;'>love</span></del> <i>a keyboard</i>
+                  in Switzerland.</div>
+               <div class="footer-copyright">&copy; <a href="https://murgio.github.io" target="_blank">2019 Muriz Serifovic, all rights reserved.</a></div>
+            </div>
+         </div>
+      </footer>
+      <!-- FOOTER-->
+
+   </div>
+   <script src="dist/js/vendor/jquery.terminal.min.js"></script>
+   <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+   <script src="dist/js/vendor/termynal.min.js"></script>
+   <script src="dist/js/jquery.validate.min.js"></script>
+   <script src="dist/js/main.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Discrete Optimization Algorithm for Converting an Image to a Connected Graph of Strings</title>
+  <link rel="stylesheet" href="tufte.css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f2e2b" />
+</head>
+
+<body>
+  <article>
+    <a href="https://murgio.github.io/blog">< Go Back</a>
+    <h1 id="tufte-css">Discrete Optimization Algorithm for Converting an Image to a Connected Graph of Strings</h1>
+    <h4 class="author">Muriz Serifovic</h4>
+    <h4 class="date">2015-11-04</h3>
+      <section>
+        <h2 id="introduction">Introduction</h2>
+        <p>
+          By using ordinary linear least squares for the optimization task, defined by
+          $$
+          \min _{x}\|A x-y\|_{2}^{2} \quad \text { with } \quad A : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}
+          $$
+          we propose an algorithm which takes a normal image as input and turns it
+          into a linked string graph that best attempts to re-assemble the image input.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="results">Results</h2>
+        <figure>
+          <label for="mn-01" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-01" class="margin-toggle"/><span class="marginnote"><strong>Left</strong>: Original image; <strong>Right</strong>: Approximation with a connected graph of strings.</span>
+          <div align="center">
+            <img src="https://raw.githubusercontent.com/Murgio/Liner-Algorithm/master/face.png" width="250px"/>
+            <img src="https://raw.githubusercontent.com/Murgio/Liner-Algorithm/master/face_output_6000_lines.png" width="250px"/>
+          </div>
+        </figure>
+        <p>The algorithm finds the darkest line between two pins. It adds this line to a new blank image and removes the same line from 
+          the original image. The output is an image created out of straight lines where every line goes through the whole image.</p>
+      </section>
+      
+      <section>
+        <h2 id="code">Code</h2>
+        <p>
+          <a href="https://github.com/Murgio/Liner-Algorithm">GitHub Repository with the code</a>
+        </p>
+      </section>
+  </article>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        messageStyle: "none"
+      });
+    </script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)']
+        ]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+</body>
+
+</html>

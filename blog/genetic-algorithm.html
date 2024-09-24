@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Genetic Algorithm for Self-Referential Image Approximation</title>
+  <link rel="stylesheet" href="tufte.css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <article>
+    <a href="https://murgio.github.io/blog">< Go Back</a>
+    <h1 id="tufte-css">Genetic Algorithm for Self-Referential Image Approximation</h1>
+    <h4 class="author">Muriz Serifovic</h4>
+    <h4 class="date">2016-10-14</h3>
+      <section>
+        <h2 id="introduction">Introduction</h2>
+        <p>
+          We propose an approach to solve the image matching problem with some stochastic 
+          optimization approach, in which the search for the optimal solution involves randomness in some constructive way.
+          If $\mathcal{S}$ denotes the (finite) set of all possible solutions, the task we consider is to maximize or minimize the objective function $f : \mathcal{S} \rightarrow \mathbb{R}$.
+          In the case of maximization, on which we focus here, the problem is to find a configuration $x_{o p t} \in \mathcal{S}$ which satisfies
+          $$
+          f\left(x_{o p t}\right) \geq f(x) \text { for all } x \in \mathcal{S}.
+          $$
+        </p>
+      </section>
+      <section>
+        <h2 id="ga">Genetic Algorithm</h2>
+        <p>
+          Genetic algorithms operate on a set of individuals (solutions) which form a population for a determined generation, then either two individuals are selected and combined in a crossover operation or each individual is mutated.
+        </p>
+        <p>
+          We might refer to an approximate solution as a <em>"candidate"</em>, or the solution's <em>"DNA"</em>.
+        </p>
+        <p>
+          A genetic algorithm tries to solve the image matching problem by starting with a random population of 260 sets of DNA consisting in form of genes with a length of 5. A fitness function is used to identify the best and worst DNA. To get a measure of how similar two images are, we calculate the root-mean-square error (RMSE) value of the difference between the images. If the images are exactly identical, this value is zero.
+          RMSE is defined as
+          $$
+          \mathrm{RMSE}=\sqrt{\frac{1}{n} \sum_{j=1}^{n}\left(y_{j}-\hat{y}_{j}\right)^{2}}.
+          $$
+        </p>
+        <p>
+          Crossover and mutations are randomly performed in order to generate new solutions. Then, based on a selection criterion, the strongest individuals (those with the best value of a performance metric) survive and remain for the next generation.
+        </p>
+        <p>
+          The process is repeated until some stopping conditions are fulfilled. In order to perform the selection of the individuals in the GA a fitness value needs to be defined. This fitness value measures the quality of the individuals and enables them to be compared.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="results">Results</h2>
+        <figure>
+          <label for="mn-01" class="margin-toggle">&#8853;</label><input type="checkbox" id="mn-01" class="margin-toggle"/><span class="marginnote"><strong>Left</strong>: Cropped version of Leonardo da Vinci, Mona Lisa, c. 1503-19, oil on panel 30-1/4 x 21″ (Musée du Louvre); <strong>Right</strong>: Approximation with the genetic algorithm.</span>
+          <div align="center">
+            <img src="img/mona.png" width="310px"/>
+            <img src="img/120000 gens.jpg" width="310px"/>
+          </div>
+        </figure>
+        <p>Mona Lisa after 120'000 generations approximated with 260 individuals.</p>
+        <p>
+          <a href="https://github.com/Murgio/Genetic-Algorithm-Montage">GitHub Repository with the code</a>
+        </p>
+      </section>
+  </article>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        messageStyle: "none"
+      });
+    </script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)']
+        ]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+</body>
+
+</html>

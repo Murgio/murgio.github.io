@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js one-page-layout">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Muriz Serifovic">
+  <meta name="keywords" content="muriz serifovic, machine learning, deep learning, data science, portfolio, resume">
+  <meta name="author" content="Muriz Serifovic">
+  <meta name="theme-color" content="#2f2e2b" />
+
+  <title>Muriz Serifovic</title>
+
+  <!-- FAV and TOUCH ICONS -->
+  <link rel="shortcut icon" href="images/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="images/ico/apple-touch-icon.png">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" type="text/css" href="css/hover-image.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="js/nprogress/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="css/fonts/fontello/css/fontello.css">
+  <link rel="stylesheet" type="text/css" href="css/align.css">
+  <link rel="stylesheet" type="text/css" href="css/layout.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/768.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+
+  <!-- INITIAL SCRIPTS -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/center.css">
+</head>
+
+<!-- fixes different font weights with different browsers.-->
+<body style="text-rendering: optimizeLegibility; -webkit-font-smoothing: subpixel-antialiased; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+  <!-- card-layout -->
+  <section class="card-layout">
+    <!-- card-intro -->
+    <div class="card-intro">
+      <!--
+                   <div class="container-glitch">
+                      <h1 class="glitch">Muriz Serifovic</h1>
+                    </div>-->
+      <div id="imhover" onmouseenter="showhover();" onmouseleave="hidehover();">
+        <svg class="distort" width="700" height="525" viewBox="0 0 700 525">
+            <filter id="distortionFilter">
+              <feTurbulence type="fractalNoise" baseFrequency="0.01 0.003" numOctaves="5" seed="2" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"/>
+            </filter>
+            <g filter="url(#distortionFilter)">
+              <image class="distort__img" x="0" y="0" href="#" width="700" height="525"/>
+              <image class="distort__img" x="0" y="0" href="#" width="700" height="525"/>
+              <image class="distort__img" x="0" y="57" href="#" width="609" height="411"/>
+            </g>
+          </svg>
+        <h1>Muriz Serifovic</h1>
+        <p style="padding: 10px 0 5px; font-size: 18px;">
+          Hi! — My work centers on advancing transformer models and multi-modal systems within machine learning. I deeply investigate the complex dynamics of stochastic gradient descent and the practical implications of overparameterized models. I enjoy writing code in Python and Julia.
+
+        </p>
+        <p class="hover-imgs" style="padding: 10px 0 5px; font-size: 18px;">
+          Some side projects:
+           <a href="https://github.com/Murgio/Food-Recipe-CNN" class="quote__link" target="_blank">DeepChef</a>,
+           <a href="/products/möbius/" class="quote__link" target="_blank">Möbius Code Editor</a> and
+           <a href="https://github.com/Murgio/TextRank-Machine-Learning" class="quote__link" target="_blank">Sharead</a>.
+           <!--<a href="https://medium.com/@Muriz.Serifovic/how-to-write-your-very-first-powerful-artificial-intelligence-s-440895442c03" class="sirlexa" target="_blank">Sirlexa</a>-->
+         </p>
+        <p style="font-size: 18px;">
+          My <a class="quote__link" href="https://www.irif.fr/~haberm//haindex.html">ha-index</a> is greater than 80 (which is considered excellent).
+        </p>
+        <!-- <p style="font-size: 18px;">
+          Medium articles: <img src="images/home/medium.png">
+        </p> -->
+        <div class="card-triggers" style="width: 150%;">
+          <a href="#card" id="card-open" class="button secondary">Tell me more</a>
+          <a href="/blog/" class="button primary">Visit Blog</a>
+          <a href="https://github.com/Murgio" class="button primary">Visit GitHub <i
+              class="pw-icon-github-circled"></i></a>
+        </div>
+      </div>
+      <!-- research -->
+      <header class="entry-header-blog">
+        <h2 class="entry-title-blog">research work.</h2>
+      </header>
+      <section class="cards-wrapper-blog-research">
+        <div class="card-grid-space event-research">
+          <a class="research" href="https://murgio.github.io/blog/persistent-homology-alzheimers" target="_blank">
+            <div>
+              <h5>2021</h5>
+              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Topological Analysis of Transneuronal Spreading Mechanisms in Neurodegenerative Diseases by Persistent Homology</h2>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 1.2em !important;">
+                  In the light of new advancements in algebraic topology, we give an introductory exhibition
+                  on the usage of simplicial complexes and persistent homology in the analysis of spatiotemporal
+                  patterns in the physiological deterioration caused by Alzheimer's disease and its precursor, mild cognitive impairment.
+
+              </p>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 1.2em !important;">
+              </p>
+              <div class="tags-blog">
+                <div class="tag-blog">Neuroscience</div>
+                <div class="tag-blog">Topological Data Analysis</div>
+                <div class="tag-blog">Mathematics</div>
+                <div class="tag-blog-hotter"><i class="pw-icon-eye-outline"></i> 63 visits / month</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space event-research">
+          <a class="research" href="https://murgio.github.io/blog/diabetic-retinopathy" target="_blank">
+            <div>
+              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Revisiting Deep Learning based Classification Methods of <br> Diabetic Retinopathy and Macular Edema in 2D Fundus Photography</h2>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 1.2em !important;">
+                We provide a glimpse into the ongoing research of retinal image classification with deep learning methods in medical literature. Specifically, we provide a meta-analysis of new techniques towards the classification of
+                retinal disorders such as diabetic retinopathy and macular edema.</p>
+              <div class="tags-blog">
+                <div class="tag-blog">Machine Learning</div>
+                <div class="tag-blog">Retinal Image Analysis</div>
+                <div class="tag-blog">Healthcare</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space event-research">
+          <a class="research">
+            <div>
+              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">A Category-Theoretic Perspective of Information Theory</h2>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 2.4em !important;">We present an axiomatization
+                of Claude Shannon's work "A mathematical theory of communication" from a categorical point of view using Categories, natural transformations, functors, morphisms, etc.
+              </p>
+              <div class="tags-blog">
+                <div class="tag-blog">Mathematics</div>
+                <div class="tag-blog">Computer Science</div>
+                <div class="tag-blog">Draft</div>
+              </div>
+            </div>
+          </a>
+        </div>
+          <div class="card-grid-space event-research">
+              <a class="research">
+                <div>
+                  <h5>2019</h5>
+                  <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Punctuation Restoration in Unsegmented Text with Deep Convolutional Neural Networks</h2>
+                  <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 1.2em !important;">
+                      In this work we suggest an approach to predict marks of punctuation for unsegmented text corpora. A Deep Convolutional Neural Network (DCNN) model is implemented to determine if a punctuation mark should be inserted in a word window of lenght 30.
+                      The goal is to find the optimal weights \(W\) and biases \(b\) within cost function \(C\):
+                      $$ \underset{W, b}{\arg \min } C=\frac{1}{2 N} \sum_{i=1}^{N}\left\|\hat{Y}_{i}-Y_{i}\right\|^{2}+\frac{\lambda}{2} \sum_{l=1}^{L-1}\left\|W_{l}\right\|_{F}^{2}$$
+
+                      We empirically show the effectiveness of our proposed architecture outperforming previous state-of-the-art solutions.
+                  </p>
+                  <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 1.2em !important;">
+                  </p>
+                  <div class="tags-blog">
+                    <div class="tag-blog">Natural Language Processing</div>
+                    <div class="tag-blog">Draft</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+        <div class="card-grid-space event-research">
+          <a class="research" href="https://murgio.github.io/blog/unsupervised-ranking-model" target="_blank">
+            <div>
+              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Predicting Most Important Passages in YouTube Tech <br> Talks with Unsupervised Graph-Based Ranking Models</h2>
+              <div style="float: right; margin-left: 1.9em; text-align: center">
+                <img src="images/home/yt-z-score.jpg" style="width:363px; margin-top:1em;border-radius:0.4em;">
+                <div style="font-size: 90%; text-align: center; max-width:463px">Visualizing importance predictions (colored in red) over the time axis which are smoothened by Weierstrass Transform.</div>
+              </div>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 2.4em !important;">Word Embeddings (WE) have recently imposed themselves as a standard for representing word meaning in NLP. In this work, we propose the unsupervised application
+                  of graph-based ranking models to video speech captions, building a graph that interconnects words represented by GloVe embeddings. For a sentence \(V_{i}\), the weighted rank is defined as:
+                  $$
+                  W S\left(V_{i}\right)=(1-d)+d * \sum_{V_{j} \in I n\left(V_{i}\right)} \frac{w_{j i}}{\sum_{V_{k} \in O u t\left(V_{j}\right)} w_{j k}} W S\left(V_{j}\right)
+                  $$
+                  <br>
+                  <!-- <br clear="all"> -->
+              </p>
+              <div class="tags-blog">
+                <div class="tag-blog">Natural Language Processing</div>
+                <div class="tag-blog">GitHub</div>
+                <div class="tag-blog-hot"><i class="pw-icon-eye-outline"></i> 17 visits / month</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space event-research">
+          <a class="research" href="https://github.com/Murgio/Food-Recipe-CNN" target="_blank">
+            <div>
+              <h5>2017</h5>
+              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Food Image Recognition System for Cooking Recipe Retrieval</h2>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 1.2em !important;">We propose a novel approach for food image retrieval by combining Deep Convolutional Neural Network (DCNN) and Approximate Nearest Neighbor (ANN) scores.
+                In our re-ranking scheme, we retrieve the best candidates
+                first using only the CNN scores and then re-rank the top K
+                results using the ANN scores, giving the model additional performance improvement.</p>
+              <div class="tags-blog">
+                <div class="tag-blog">Machine Learning</div>
+                <div class="tag-blog">GitHub</div>
+                <div class="tag-blog-hottest"><i class="pw-icon-eye-outline"></i> 228 visits / month</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space event-research">
+          <a class="research" href="https://murgio.github.io/blog/genetic-algorithm" target="_blank">
+            <div>
+              <h5>2016</h5>
+              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Genetic Algorithm for Self-Referential Image Approximation</h2>
+              <div style="float: right; margin-left: 1.9em; text-align: center">
+                <img src="images/home/mona-lisa.gif" style="width:133px; margin-top:1em;border-radius:0.4em;">
+                <div style="font-size: 90%; text-align: center; max-width:463px">Mona Lisa after 120'000 generations approximated with 260 individuals.</div>
+              </div>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 2.4em !important;">We propose an approach to solve the image matching problem with some stochastic 
+                optimization approach, in which the search for the optimal solution involves randomness in some constructive way.
+                If \(\mathcal{S}\) denotes the (finite) set of all possible solutions, the task we consider is to maximize or minimize the objective function \(f : \mathcal{S} \rightarrow \mathbb{R}\).
+                In the case of maximization, on which we focus here, the problem is to find a configuration \(x_{o p t} \in \mathcal{S}\) which satisfies
+                $$
+                f\left(x_{o p t}\right) \geq f(x) \text { for all } x \in \mathcal{S}
+                $$</p>
+              <div class="tags-blog">
+                <div class="tag-blog">Mathematical Optimization</div>
+                <div class="tag-blog">GitHub</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space event-research">
+          <a class="research" href="https://murgio.github.io/blog/discrete-optimization" target="_blank">
+            <div>
+              <h5>2015</h5>
+              <h2 class="card-blog-h1" style="font-size: 1.4em !important;">Discrete Optimization Algorithm for Converting an Image to a Connected Graph of Strings</h2>
+              <div style="float: right; margin-left: 1.9em; text-align: center">
+                <img src="images/home/face-6000.png" style="width:163px; margin-top:1em;border-radius:0.4em;">
+                <div style="font-size: 90%; text-align: center; max-width:393px">Face approximated by 6000 lines to linked string graph using discrete optimization.</div>
+              </div>
+              <p class="card-blog-p" style="font-size: 1.05em !important; margin-top: 0.6em !important; margin-bottom: 2.4em !important;">By using ordinary linear least squares for the optimization task, defined by
+                  $$
+                  \min _{x}\|A x-y\|_{2}^{2} \quad \text { with } \quad A : \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}
+                  $$
+                  we propose an algorithm which takes a normal image as input and turns it
+                  into a linked string graph that best attempts to re-assemble the image input.</p>
+              <div class="tags-blog">
+                <div class="tag-blog">Mathematical Optimization</div>
+                <div class="tag-blog">GitHub</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+      <header class="entry-header-blog">
+        <h2 class="entry-title-blog">latest from the blog.</h2>
+      </header>
+      <section class="cards-wrapper-blog">
+        <div class="card-grid-space">
+          <a class="card-blog card-blog-large" href="https://towardsdatascience.com/this-ai-is-hungry-b2a8655528be"
+            style="--bg-img: url('/images/blog/01-large.png')">
+            <div>
+              <h2 class="card-blog-h1">Image-to-Recipe Translation with Deep Convolutional Neural Networks</h2>
+              <p class="card-blog-p">We present a novel retrieval-based approach for recipe prediction using a re-ranking scheme.</p>
+              <div class="tags-blog">
+                <div class="tag-blog">9 Sept 2018</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space">
+          <a class="card-blog" href="https://towardsdatascience.com/speed-up-jupyter-notebooks-20716cbe2025"
+            style="--bg-img: url('/images/blog/03.jpg')">
+            <div>
+              <h2 class="card-blog-h1">Profiling and Optimizing Python Algorithms in Scientific Environments</h2>
+              <p class="card-blog-p">Find bottlenecks and increase pythons speed performance by magnitudes...</p>
+              <div class="tags-blog">
+                <div class="tag-blog">1 Jan 2019</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space">
+          <a class="card-blog" style="--bg-img: url('/images/blog/06_small.gif')">
+            <div>
+              <h2 class="card-blog-h1">Implementing Long short-term memory (LSTM) with NumPy</h2>
+              <p class="card-blog-p">Learn how to implement a forward pass and backpropagation by hand...</p>
+              <div class="tags-blog">
+                <div class="date-blog">Coming soon</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space">
+          <a class="card-blog" style="--bg-img: url('/images/blog/04.jpg')">
+            <div>
+              <h2 class="card-blog-h1">Composing Novel Sound with Neural Networks</h2>
+              <p class="card-blog-p">Generate music with a long short-term memory (LSTM) neural network...</p>
+              <div class="tags-blog">
+                <div class="date-blog">Coming soon</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space">
+          <a class="card-blog" style="--bg-img: url('/images/blog/05.gif')">
+            <div>
+              <h2 class="card-blog-h1">Deploy on Kubernetes with Python, Flask and Docker</h2>
+              <p class="card-blog-p">Learn how to serve your deep learning model as REST API with Flask...</p>
+              <div class="tags-blog">
+                <div class="date-blog">Coming soon</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space">
+          <a class="card-blog card-blog-medium" href="/blog/" target="_blank"
+            style="--bg-img: url('/images/blog/more.gif')">
+            <div>
+              <h1 class="card-blog-h1">Blog</h1>
+              <p class="card-blog-p">Visit my blog where I share more (quite infrequently) about TDA, Neural Networks, Causal Learning, CNNs, ...
+              </p>
+              <div class="tags-blog">
+                <div class="date-blog"><i class="pw-icon-external"></i></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+      <!-------------------------------------
+                FOOTER
+                --------------------------------------->
+      <div class="container">
+        <footer class="bg-white-footer border-top p-3-footer text-muted small">
+          <div class="row-footer justify-content-between">
+            <div>
+              Copyright &copy; Muriz Serifovic,
+              <script>
+                document.write(new Date().getFullYear())
+              </script>. Hand-crafted with <span style="color: #E37B66;">&#9829;</span> in Switzerland.
+            </div>
+            <div>
+                <a style="color: inherit; opacity: 0.7;" href="#card"><i class="pw-icon-up-open-big"></i>back to top</a>
+            </div>
+          </div>
+      </div>
+      <!-- End Footer -->
+    </div>
+    <!-- card-intro -->
+
+    <!-- card -->
+    <div id="card" class="card">
+      <!-- card shadow-->
+      <span id="shadowcard" class="shadowcard"></span>
+
+      <!-- .cover -->
+      <div class="cover">
+
+        <img class="cover-img" src="images/home/home.jpg" alt="vcard">
+
+        <div class="cover-media" data-image-url="images/home/home.gif"
+          style="background-image: url(images/home/home.jpg)"></div>
+
+        <div class="card-info">
+          <h2 class="close-card-mobile">Muriz Serifovic</h2>
+          <h3 class='close-card-mobile'>Machine Learning Engineer/ Deep Learning Research</h3>
+          <div class="card-desc">
+            <p style="padding: 10px 0 5px;">
+              Hi! — I'm interested in neuroscience, climate science, computational and algebraic topology, topological data analysis and my research interests generally lie in classical statistical learning and deep learning. I enjoy writing code in Python.
+            </p>
+            <p style="padding: 10px 0 5px;">
+              Some side projects:
+              <a href="https://github.com/Murgio/Food-Recipe-CNN" class="quote__link" target="_blank">DeepChef</a>,
+              <a href="/products/möbius/" class="quote__link" target="_blank">Möbius Code Editor</a> and
+              <a href="https://github.com/Murgio/TextRank-Machine-Learning" class="quote__link"
+                target="_blank">Sharead</a>.
+              <!--<a href="https://medium.com/@Muriz.Serifovic/how-to-write-your-very-first-powerful-artificial-intelligence-s-440895442c03" class="sirlexa" target="_blank">Sirlexa</a>-->
+            </p>
+            <p>
+              My <a class="quote__link" href="https://www.irif.fr/~haberm//haindex.html">ha-index</a> is greater than 80 (which is considered excellent).
+            </p>
+          </div>
+        </div>
+
+        <nav class="card-nav">
+          <ul>
+            <li>
+              <a href="about.html" data-slug="about"><i class="pw-icon-user"></i>Tell me more</a>
+            </li>
+            <li>
+              <a href="resume.html" data-slug="resume"><i class="pw-icon-vcard"></i>Résumé</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="cover-link"></div>
+      </div>
+      <!-- .cover -->
+
+      <div class="card-3d-right-side" style="background-image: url(images/home/cover6.jpg)"></div>
+      <div class="card-3d-bottom-side" style="background-image: url(images/home/cover6.jpg)"></div>
+
+      <div class="card-content"></div>
+
+    </div>
+    <!-- card -->
+
+    <a href="#" class="close-card"></a>
+
+  </section>
+  <!-- card-layout -->
+
+  <div class="card-footer">
+    <h1><a href="#card">go to top</a></h1>
+  </div>
+
+  <!-- .site-footer -->
+  <footer id="colophon" class="site-footer" role="contentinfo">
+
+    <!-- .site-info -->
+    <div class="site-info">
+      <div class="textwidget">
+        <p><a href="https://murgio.github.io">Copyright &copy; 2024 by Muriz Serifovic</a></p>
+      </div>
+    </div>
+    <!-- .site-info -->
+
+  </footer>
+  <!-- .site-footer -->
+
+  <!-- PORTFOLIO SINGLE AJAX CONTENT CONTAINER -->
+  <div class="p-overlay"></div>
+  <div class="p-overlay"></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/fastclick.js"></script>
+  <script src="js/jquery.address.js"></script>
+  <script src="js/nprogress/nprogress.js"></script>
+  <script src="js/jquery.isotope.min.js"></script>
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+  <script src="js/jquery.fitvids.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/charming.min.js"></script>
+  <script src="js/TweenMax.min.js"></script>
+  <script src="js/hover-img.js"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none"
+    });
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</body>
+
+</html>
